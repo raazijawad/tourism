@@ -3,6 +3,7 @@ import { Accordion } from '@/components/tripvana/Accordion';
 import { ActivityCard } from '@/components/tripvana/ActivityCard';
 import { BlogCard } from '@/components/tripvana/BlogCard';
 import { Button } from '@/components/tripvana/Button';
+import { FlowButton } from '@/components/ui/flow-button';
 import { PackageCard } from '@/components/tripvana/PackageCard';
 import { ReviewCard } from '@/components/tripvana/ReviewCard';
 import { SectionHeading } from '@/components/tripvana/SectionHeading';
@@ -25,7 +26,7 @@ export default function Welcome() {
                         </svg>
                         Tripvana
                     </div>
-                    <nav className="hidden items-center gap-8 rounded-full bg-white/10 px-8 py-4 backdrop-blur-md md:flex border border-white/20 text-white font-medium absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+                    <nav className="hidden items-center gap-8 rounded-full bg-white/10 px-8 py-4 backdrop-blur-md md:flex border border-white/20 text-white font-medium absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2" style={{ fontFamily: 'Aspekta, sans-serif' }}>
                         <a href="#" className="transition-colors hover:text-[var(--color-tripvana-a0f751)]">Home</a>
                         <a href="#" className="transition-colors hover:text-[var(--color-tripvana-a0f751)]">About us</a>
                         <a href="#" className="transition-colors hover:text-[var(--color-tripvana-a0f751)]">Packages</a>
@@ -55,21 +56,15 @@ export default function Welcome() {
                     </div>
 
                     <div className="container relative z-10 mx-auto flex items-center justify-center px-6 max-w-[var(--_sizes---container--max-width)]">
-                        <div className="max-w-xl text-white text-center">
-                                <h1 className="mb-6 mt-12 text-5xl font-bold md:text-6xl">
+                        <div className="max-w-4xl text-white text-center">
+                                <h1 className="mb-6 mt-12 text-6xl font-bold" style={{ fontFamily: 'Unbounded, sans-serif' }}>
                                     Your Next Adventure <br />Starts Here
                                 </h1>
                                 <p className="mb-8 text-xs text-white/80 text-center max-w-md mx-auto">
                                     Discover the most beautiful places, experience authentic cultures, and create unforgettable memories with our expertly crafted travel packages.
                                 </p>
                                 <div className="flex flex-wrap items-center justify-center gap-4">
-                                    <Button size="lg">Explore Tours</Button>
-                                    <Button variant="round" className="h-14 w-14">
-                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                                            <polygon points="5 3 19 12 5 21 5 3"></polygon>
-                                        </svg>
-                                    </Button>
-                                    <span className="font-medium">Watch Video</span>
+                                    <FlowButton text="Explore Tours" variant="light" />
                                 </div>
 
                                 {/* Govaisor Widget Placeholder */}
