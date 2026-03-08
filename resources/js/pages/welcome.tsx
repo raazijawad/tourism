@@ -25,7 +25,7 @@ export default function Welcome() {
                         </svg>
                         Tripvana
                     </div>
-                    <nav className="hidden items-center gap-8 rounded-full bg-white/10 px-8 py-4 backdrop-blur-md md:flex border border-white/20 text-white font-medium">
+                    <nav className="hidden items-center gap-8 rounded-full bg-white/10 px-8 py-4 backdrop-blur-md md:flex border border-white/20 text-white font-medium absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
                         <a href="#" className="transition-colors hover:text-[var(--color-tripvana-a0f751)]">Home</a>
                         <a href="#" className="transition-colors hover:text-[var(--color-tripvana-a0f751)]">About us</a>
                         <a href="#" className="transition-colors hover:text-[var(--color-tripvana-a0f751)]">Packages</a>
