@@ -56,8 +56,8 @@ export default function Welcome() {
 
                     <div className="container relative z-10 mx-auto flex items-center justify-center px-6 max-w-[var(--_sizes---container--max-width)]">
                         <div className="max-w-xl text-white text-center">
-                                <h1 className="mb-6 mt-12 text-7xl font-bold">
-                                    Your Next Adventure Starts Here
+                                <h1 className="mb-6 mt-12 text-5xl font-bold md:text-6xl">
+                                    Your Next Adventure <br />Starts Here
                                 </h1>
                                 <p className="mb-8 text-xs text-white/80 text-center max-w-md mx-auto">
                                     Discover the most beautiful places, experience authentic cultures, and create unforgettable memories with our expertly crafted travel packages.
