@@ -54,14 +54,14 @@ const Gallery4 = ({
   }, [carouselApi]);
 
   return (
-    <section className="py-12">
+    <section className={`py-12 ${centered ? 'bg-white' : ''}`}>
       <div className="container mx-auto">
         <div className={`mb-8 flex ${centered ? 'flex-col items-center text-center' : 'items-end justify-between'} md:mb-14 lg:mb-16`}>
           <div className={`flex flex-col gap-4 ${centered ? 'items-center' : ''}`}>
-            <h2 className="text-3xl font-medium md:text-4xl lg:text-5xl" style={{ fontFamily: centered ? 'Poppins, sans-serif' : 'Cabinet Grotesk, sans-serif' }}>
+            <h2 className={`text-3xl font-medium md:text-4xl lg:text-5xl ${centered ? 'text-[var(--color-tripvana-091733)]' : ''}`} style={{ fontFamily: centered ? 'Poppins, sans-serif' : 'Cabinet Grotesk, sans-serif' }}>
               {title}
             </h2>
-            <p className={`max-w-lg text-muted-foreground ${centered ? 'mx-auto' : ''}`}>{description}</p>
+            <p className={`max-w-lg ${centered ? 'mx-auto text-[var(--color-tripvana-656e7f)]' : 'text-muted-foreground'}`}>{description}</p>
           </div>
           {!centered && (
             <div className="hidden shrink-0 gap-2 md:flex">
@@ -117,13 +117,13 @@ const Gallery4 = ({
                     />
                     <div className="absolute inset-0 h-full bg-[linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0.4),rgba(0,0,0,0.8)_100%)]" />
                     <div className="absolute inset-x-0 bottom-0 flex flex-col items-start p-6 text-white md:p-8">
-                      <div className="mb-2 pt-4 text-xl font-semibold md:mb-3 md:pt-4 lg:pt-4">
+                      <div className="mb-2 pt-4 text-xl font-semibold md:mb-3 md:pt-4 lg:pt-4" style={{ fontFamily: 'Aspekta, sans-serif' }}>
                         {item.title}
                       </div>
-                      <div className="mb-8 line-clamp-2 md:mb-12 lg:mb-9">
+                      <div className="mb-8 line-clamp-2 md:mb-12 lg:mb-9" style={{ fontFamily: 'Aspekta, sans-serif' }}>
                         {item.description}
                       </div>
-                      <div className="flex items-center text-sm">
+                      <div className="flex items-center text-sm" style={{ fontFamily: 'Aspekta, sans-serif' }}>
                         Read more{" "}
                         <ArrowRight className="ml-2 size-5 transition-transform group-hover:translate-x-1" />
                       </div>
