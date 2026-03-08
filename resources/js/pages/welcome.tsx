@@ -44,7 +44,7 @@ export default function Welcome() {
                 </header>
 
                 {/* ---------- HERO SECTION ---------- */}
-                <section className="relative flex min-h-[90vh] items-center justify-center overflow-hidden pt-32 lg:pt-0">
+                <section className="relative flex min-h-[100vh] items-center justify-center overflow-hidden pt-32 lg:pt-0">
                     {/* Background Image */}
                     <div className="absolute inset-0 bg-[var(--color-tripvana-091733)]">
                         <img
