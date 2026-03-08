@@ -4,6 +4,9 @@ import { ActivityCard } from '@/components/tripvana/ActivityCard';
 import { BlogCard } from '@/components/tripvana/BlogCard';
 import { Button } from '@/components/tripvana/Button';
 import { FlowButton } from '@/components/ui/flow-button';
+import { DestinationCard } from '@/components/ui/card-21';
+import { Gallery4 } from '@/components/ui/gallery4';
+import { AuroraBackground } from '@/components/ui/aurora-background';
 import { PackageCard } from '@/components/tripvana/PackageCard';
 import { ReviewCard } from '@/components/tripvana/ReviewCard';
 import { SectionHeading } from '@/components/tripvana/SectionHeading';
@@ -82,56 +85,66 @@ export default function Welcome() {
                 </section>
 
                 {/* ---------- TOUR ACTIVITIES ---------- */}
-                <section className="py-24 bg-[var(--color-tripvana-f8f8f8)]">
-                    <div className="container mx-auto px-6 max-w-[var(--_sizes---container--max-width)]">
-                        <div className="mb-12 flex flex-col items-center justify-between gap-6 md:flex-row">
-                            <SectionHeading 
-                                subtitle="Tour Activities" 
-                                title="A new way to explore the world" 
-                            />
-                            <div className="flex flex-wrap items-center gap-3">
-                                {['All', 'Wildlife', 'Relaxation', 'Cultural', 'Mountain'].map((tag, i) => (
-                                    <button 
-                                        key={tag}
-                                        className={`rounded-full px-6 py-2.5 text-sm font-medium transition-colors ${
-                                            i === 0 
-                                                ? 'bg-[var(--color-tripvana-091733)] text-white' 
-                                                : 'bg-white text-[var(--color-tripvana-656e7f)] hover:bg-black/5 border border-black/5'
-                                        }`}
-                                    >
-                                        {tag}
-                                    </button>
-                                ))}
-                            </div>
-                        </div>
+                <section className="relative  overflow-hidden">
+                    {/* Aurora Background */}
+                    <div className="absolute inset-0 overflow-hidden">
+                        <div
+                            className={`
+                            [--aurora:repeating-linear-gradient(100deg,#091733_10%,#656e7f_15%,#9ea7b8_20%,#a0f751_25%,#091733_30%)]
+                            [background-image:var(--aurora)]
+                            [background-size:300%,_200%]
+                            [background-position:50%_50%,50%_50%]
+                            filter blur-[80px] opacity-30
+                            animate-aurora [background-attachment:fixed]
+                            pointer-events-none
+                            absolute -inset-[10px]
+                        `}
+                        ></div>
+                    </div>
 
-                        {/* Scrolling Container */}
-                        <div className="flex gap-6 overflow-x-auto pb-8 snap-x">
-                            <div className="min-w-[70vw] snap-center sm:min-w-[40vw] lg:min-w-[25vw]">
-                                <ActivityCard 
-                                    image="https://images.unsplash.com/photo-1501555088652-021faa106b9b?q=80&w=800&auto=format&fit=crop" 
-                                    title="Hiking in Swiss Alps" 
-                                />
-                            </div>
-                            <div className="min-w-[70vw] snap-center sm:min-w-[40vw] lg:min-w-[25vw]">
-                                <ActivityCard 
-                                    image="https://images.unsplash.com/photo-1544644181-1484b3f8c8b4?q=80&w=800&auto=format&fit=crop" 
-                                    title="Luxury Desert Safari" 
-                                />
-                            </div>
-                            <div className="min-w-[70vw] snap-center sm:min-w-[40vw] lg:min-w-[25vw]">
-                                <ActivityCard 
-                                    image="https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?q=80&w=800&auto=format&fit=crop" 
-                                    title="Surfing in Bali" 
-                                />
-                            </div>
-                            <div className="min-w-[70vw] snap-center sm:min-w-[40vw] lg:min-w-[25vw]">
-                                <ActivityCard 
-                                    image="https://images.unsplash.com/photo-1527668752968-14ce70a3d7e6?q=80&w=800&auto=format&fit=crop" 
-                                    title="Cultural Temples" 
-                                />
-                            </div>
-                        </div>
+                    <div className="container relative mx-auto px-6 max-w-[var(--_sizes---container--max-width)]">
+                        <Gallery4
+                            title="A new way to explore the world"
+                            description="Discover breathtaking destinations, immerse yourself in new cultures, and create unforgettable memories with our curated travel experiences."
+                            centered
+                            items={[
+                                {
+                                    id: "swiss-alps",
+                                    title: "Hiking in Swiss Alps",
+                                    description: "Experience the majesty of snow-capped peaks, pristine lakes, and charming alpine villages on this unforgettable mountain adventure.",
+                                    href: "#",
+                                    image: "https://images.unsplash.com/photo-1501555088652-021faa106b9b?q=80&w=800&auto=format&fit=crop",
+                                },
+                                {
+                                    id: "dubai",
+                                    title: "Luxury Desert Safari",
+                                    description: "Embark on an exhilarating desert adventure with dune bashing, camel rides, and a traditional Bedouin camp experience under the stars.",
+                                    href: "#",
+                                    image: "https://images.unsplash.com/photo-1544644181-1484b3f8c8b4?q=80&w=800&auto=format&fit=crop",
+                                },
+                                {
+                                    id: "bali",
+                                    title: "Surfing in Bali",
+                                    description: "Ride the perfect waves in paradise, explore ancient temples, and discover the vibrant culture of the Island of the Gods.",
+                                    href: "#",
+                                    image: "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?q=80&w=800&auto=format&fit=crop",
+                                },
+                                {
+                                    id: "kyoto",
+                                    title: "Cultural Temples of Kyoto",
+                                    description: "Journey through Japan's ancient capital, visiting serene temples, traditional tea houses, and breathtaking cherry blossom gardens.",
+                                    href: "#",
+                                    image: "https://images.unsplash.com/photo-1527668752968-14ce70a3d7e6?q=80&w=800&auto=format&fit=crop",
+                                },
+                                {
+                                    id: "santorini",
+                                    title: "Santorini Island Escape",
+                                    description: "Relax in the stunning white-washed villages, enjoy spectacular sunsets, and explore the crystal-clear waters of the Aegean Sea.",
+                                    href: "#",
+                                    image: "https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?q=80&w=800&auto=format&fit=crop",
+                                },
+                            ]}
+                        />
                     </div>
                 </section>
 
