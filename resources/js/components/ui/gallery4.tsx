@@ -61,7 +61,7 @@ const Gallery4 = ({
             <h2 className={`text-3xl font-medium md:text-4xl lg:text-5xl ${centered ? 'text-[var(--color-tripvana-091733)]' : ''}`} style={{ fontFamily: centered ? 'Poppins, sans-serif' : 'Cabinet Grotesk, sans-serif' }}>
               {title}
             </h2>
-            <p className={`max-w-lg ${centered ? 'mx-auto text-[var(--color-tripvana-656e7f)]' : 'text-muted-foreground'}`}>{description}</p>
+            <p className={`max-w-lg ${centered ? 'mx-auto text-[var(--color-tripvana-656e7f)] text-xs' : 'text-muted-foreground'}`}>{description}</p>
           </div>
           {!centered && (
             <div className="hidden shrink-0 gap-2 md:flex">
@@ -95,6 +95,8 @@ const Gallery4 = ({
         <Carousel
           setApi={setCarouselApi}
           opts={{
+            loop: true,
+            align: "start",
             breakpoints: {
               "(max-width: 768px)": {
                 dragFree: true,
@@ -134,20 +136,22 @@ const Gallery4 = ({
             ))}
           </CarouselContent>
         </Carousel>
-        <div className={`mt-8 flex ${centered ? 'justify-center gap-2' : 'justify-center gap-2'}`}>
-          {items.map((_, index) => (
-            <button
-              key={index}
-              className={`h-2 w-2 rounded-full transition-colors ${
-                currentSlide === index ? "bg-[var(--color-tripvana-091733)]" : "bg-[var(--color-tripvana-091733)]/20"
-              }`}
-              onClick={() => carouselApi?.scrollTo(index)}
-              aria-label={`Go to slide ${index + 1}`}
-            />
-          ))}
-        </div>
+        {!centered && (
+          <div className="mt-8 flex justify-center gap-2">
+            {items.map((_, index) => (
+              <button
+                key={index}
+                className={`h-2 w-2 rounded-full transition-colors ${
+                  currentSlide === index ? "bg-[var(--color-tripvana-091733)]" : "bg-[var(--color-tripvana-091733)]/20"
+                }`}
+                onClick={() => carouselApi?.scrollTo(index)}
+                aria-label={`Go to slide ${index + 1}`}
+              />
+            ))}
+          </div>
+        )}
         {centered && (
-          <div className="mt-4 flex justify-center gap-2 md:hidden">
+          <div className="mt-4 flex justify-center gap-2">
             <Button
               size="icon"
               variant="ghost"

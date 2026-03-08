@@ -107,6 +107,8 @@ export default function Welcome() {
                             title="A new way to explore the world"
                             description="Discover breathtaking destinations, immerse yourself in new cultures, and create unforgettable memories with our curated travel experiences."
                             centered
+                            autoPlay
+                            autoPlayInterval={3000}
                             items={[
                                 {
                                     id: "swiss-alps",
