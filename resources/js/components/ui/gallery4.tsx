@@ -68,14 +68,14 @@ const Gallery4 = ({
   }, [autoPlay, autoPlayInterval, carouselApi]);
 
   return (
-    <section className={`py-12 ${centered ? 'bg-white' : ''}`}>
+    <section className={`py-24 ${centered ? 'bg-white' : ''}`}>
       <div className="container mx-auto">
         <div className={`mb-8 flex ${centered ? 'flex-col items-center text-center' : 'items-end justify-between'} md:mb-14 lg:mb-16`}>
           <div className={`flex flex-col gap-4 ${centered ? 'items-center' : ''}`}>
             <h2 className={`text-3xl font-medium md:text-4xl lg:text-5xl ${centered ? 'text-[var(--color-tripvana-091733)]' : ''}`} style={{ fontFamily: centered ? 'Unbounded, sans-serif' : 'Cabinet Grotesk, sans-serif' }}>
               {title}
             </h2>
-            <p className={`max-w-lg ${centered ? 'mx-auto text-[var(--color-tripvana-656e7f)] text-xs' : 'text-muted-foreground'}`}>{description}</p>
+            <p className={`max-w-lg ${centered ? 'mx-auto text-[var(--color-tripvana-656e7f)] text-xs mb-8' : 'text-muted-foreground'}`}>{description}</p>
           </div>
           {!centered && (
             <div className="hidden shrink-0 gap-2 md:flex">
