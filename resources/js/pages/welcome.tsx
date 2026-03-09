@@ -135,7 +135,7 @@ export default function Welcome() {
                 </section>
 
                 {/* ---------- BOOKING PROCESS ---------- */}
-                <section className="py-24 bg-white">
+                <section className="py-24 bg-[var(--color-tripvana-f8f8f8)]">
                     <div className="container mx-auto px-6 max-w-[var(--_sizes---container--max-width)] text-center">
                         <SectionHeading 
                             subtitle="Booking Process" 
