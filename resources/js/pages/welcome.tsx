@@ -85,23 +85,7 @@ export default function Welcome() {
                 </section>
 
                 {/* ---------- TOUR ACTIVITIES ---------- */}
-                <section className="relative  overflow-hidden">
-                    {/* Aurora Background */}
-                    <div className="absolute inset-0 overflow-hidden">
-                        <div
-                            className={`
-                            [--aurora:repeating-linear-gradient(100deg,#091733_10%,#656e7f_15%,#9ea7b8_20%,#a0f751_25%,#091733_30%)]
-                            [background-image:var(--aurora)]
-                            [background-size:300%,_200%]
-                            [background-position:50%_50%,50%_50%]
-                            filter blur-[80px] opacity-30
-                            animate-aurora [background-attachment:fixed]
-                            pointer-events-none
-                            absolute -inset-[10px]
-                        `}
-                        ></div>
-                    </div>
-
+                <section className="bg-white">
                     <div className="container relative mx-auto px-6 max-w-[var(--_sizes---container--max-width)]">
                         <Gallery4
                             title="A new way to explore the world"
