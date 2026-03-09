@@ -24,6 +24,8 @@ export interface Gallery4Props {
   description?: string;
   items: Gallery4Item[];
   centered?: boolean;
+  autoPlay?: boolean;
+  autoPlayInterval?: number;
 }
 
 const Gallery4 = ({
@@ -31,6 +33,8 @@ const Gallery4 = ({
   description = "Discover how leading companies and developers are leveraging modern web technologies to build exceptional digital experiences. These case studies showcase real-world applications and success stories.",
   items = [],
   centered = false,
+  autoPlay = false,
+  autoPlayInterval = 3000,
 }: Gallery4Props) => {
   const [carouselApi, setCarouselApi] = useState<CarouselApi>();
   const [canScrollPrev, setCanScrollPrev] = useState(false);
@@ -52,6 +56,16 @@ const Gallery4 = ({
       carouselApi.off("select", updateSelection);
     };
   }, [carouselApi]);
+
+  useEffect(() => {
+    if (!autoPlay || !carouselApi) {
+      return;
+    }
+    const interval = setInterval(() => {
+      carouselApi.scrollNext();
+    }, autoPlayInterval);
+    return () => clearInterval(interval);
+  }, [autoPlay, autoPlayInterval, carouselApi]);
 
   return (
     <section className={`py-12 ${centered ? 'bg-white' : ''}`}>
@@ -91,92 +105,127 @@ const Gallery4 = ({
           )}
         </div>
       </div>
-      <div className="w-full">
-        <Carousel
-          setApi={setCarouselApi}
-          opts={{
-            loop: true,
-            align: "start",
-            breakpoints: {
-              "(max-width: 768px)": {
-                dragFree: true,
-              },
-            },
-          }}
-        >
-          <CarouselContent className="ml-0 2xl:ml-[max(8rem,calc(50vw-700px))] 2xl:mr-[max(0rem,calc(50vw-700px))]">
-            {items.map((item) => (
-              <CarouselItem
-                key={item.id}
-                className="max-w-[320px] pl-[20px] lg:max-w-[360px]"
+      {centered && autoPlay ? (
+        <div className="relative w-full overflow-hidden">
+          <div className="flex animate-scroll gap-5" style={{ width: 'max-content' }}>
+            {[...items, ...items].map((item, index) => (
+              <a
+                key={`${item.id}-${index}`}
+                href={item.href}
+                className="group rounded-xl"
               >
-                <a href={item.href} className="group rounded-xl">
-                  <div className="group relative h-full min-h-[27rem] max-w-full overflow-hidden rounded-xl md:aspect-[5/4] lg:aspect-[16/9]">
-                    <img
-                      src={item.image}
-                      alt={item.title}
-                      className="absolute h-full w-full object-cover object-center transition-transform duration-300 group-hover:scale-105"
-                    />
-                    <div className="absolute inset-0 h-full bg-[linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0.4),rgba(0,0,0,0.8)_100%)]" />
-                    <div className="absolute inset-x-0 bottom-0 flex flex-col items-start p-6 text-white md:p-8">
-                      <div className="mb-2 pt-4 text-xl font-semibold md:mb-3 md:pt-4 lg:pt-4" style={{ fontFamily: 'Aspekta, sans-serif' }}>
-                        {item.title}
-                      </div>
-                      <div className="mb-8 line-clamp-2 md:mb-12 lg:mb-9" style={{ fontFamily: 'Aspekta, sans-serif' }}>
-                        {item.description}
-                      </div>
-                      <div className="flex items-center text-sm" style={{ fontFamily: 'Aspekta, sans-serif' }}>
-                        Read more{" "}
-                        <ArrowRight className="ml-2 size-5 transition-transform group-hover:translate-x-1" />
-                      </div>
+                <div className="group relative h-full min-h-[18rem] max-w-full overflow-hidden rounded-xl" style={{ width: '280px' }}>
+                  <img
+                    src={item.image}
+                    alt={item.title}
+                    className="absolute h-full w-full object-cover object-center transition-transform duration-300 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 h-full bg-[linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0.4),rgba(0,0,0,0.8)_100%)]" />
+                  <div className="absolute inset-x-0 bottom-0 flex flex-col items-start p-4 text-white md:p-5">
+                    <div className="mb-2 pt-4 text-base font-semibold md:mb-3 md:pt-4 lg:pt-4" style={{ fontFamily: 'Aspekta, sans-serif' }}>
+                      {item.title}
+                    </div>
+                    <div className="mb-6 line-clamp-2 md:mb-8 lg:mb-6 text-sm" style={{ fontFamily: 'Aspekta, sans-serif' }}>
+                      {item.description}
+                    </div>
+                    <div className="flex items-center text-xs" style={{ fontFamily: 'Aspekta, sans-serif' }}>
+                      Read more{" "}
+                      <ArrowRight className="ml-1 size-4 transition-transform group-hover:translate-x-1" />
                     </div>
                   </div>
-                </a>
-              </CarouselItem>
-            ))}
-          </CarouselContent>
-        </Carousel>
-        {!centered && (
-          <div className="mt-8 flex justify-center gap-2">
-            {items.map((_, index) => (
-              <button
-                key={index}
-                className={`h-2 w-2 rounded-full transition-colors ${
-                  currentSlide === index ? "bg-[var(--color-tripvana-091733)]" : "bg-[var(--color-tripvana-091733)]/20"
-                }`}
-                onClick={() => carouselApi?.scrollTo(index)}
-                aria-label={`Go to slide ${index + 1}`}
-              />
+                </div>
+              </a>
             ))}
           </div>
-        )}
-        {centered && (
-          <div className="mt-4 flex justify-center gap-2">
-            <Button
-              size="icon"
-              variant="ghost"
-              onClick={() => {
-                carouselApi?.scrollPrev();
-              }}
-              disabled={!canScrollPrev}
-              className="disabled:pointer-events-auto"
-            >
-              <ArrowLeft className="size-5" />
-            </Button>
-            <Button
-              size="icon"
-              variant="ghost"
-              onClick={() => {
-                carouselApi?.scrollNext();
-              }}
-              disabled={!canScrollNext}
-              className="disabled:pointer-events-auto"
-            >
-              <ArrowRight className="size-5" />
-            </Button>
-          </div>
-        )}
-      </div>
+        </div>
+      ) : (
+        <div className="w-full">
+          <Carousel
+            setApi={setCarouselApi}
+            opts={{
+              loop: true,
+              align: "start",
+              breakpoints: {
+                "(max-width: 768px)": {
+                  dragFree: true,
+                },
+              },
+            }}
+          >
+            <CarouselContent className="ml-0 2xl:ml-[max(8rem,calc(50vw-700px))] 2xl:mr-[max(0rem,calc(50vw-700px))]">
+              {items.map((item) => (
+                <CarouselItem
+                  key={item.id}
+                  className="max-w-[320px] pl-[20px] lg:max-w-[360px]"
+                >
+                  <a href={item.href} className="group rounded-xl">
+                    <div className="group relative h-full min-h-[27rem] max-w-full overflow-hidden rounded-xl md:aspect-[5/4] lg:aspect-[16/9]">
+                      <img
+                        src={item.image}
+                        alt={item.title}
+                        className="absolute h-full w-full object-cover object-center transition-transform duration-300 group-hover:scale-105"
+                      />
+                      <div className="absolute inset-0 h-full bg-[linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0.4),rgba(0,0,0,0.8)_100%)]" />
+                      <div className="absolute inset-x-0 bottom-0 flex flex-col items-start p-6 text-white md:p-8">
+                        <div className="mb-2 pt-4 text-xl font-semibold md:mb-3 md:pt-4 lg:pt-4" style={{ fontFamily: 'Aspekta, sans-serif' }}>
+                          {item.title}
+                        </div>
+                        <div className="mb-8 line-clamp-2 md:mb-12 lg:mb-9" style={{ fontFamily: 'Aspekta, sans-serif' }}>
+                          {item.description}
+                        </div>
+                        <div className="flex items-center text-sm" style={{ fontFamily: 'Aspekta, sans-serif' }}>
+                          Read more{" "}
+                          <ArrowRight className="ml-2 size-5 transition-transform group-hover:translate-x-1" />
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+          </Carousel>
+          {!centered && (
+            <div className="mt-8 flex justify-center gap-2">
+              {items.map((_, index) => (
+                <button
+                  key={index}
+                  className={`h-2 w-2 rounded-full transition-colors ${
+                    currentSlide === index ? "bg-[var(--color-tripvana-091733)]" : "bg-[var(--color-tripvana-091733)]/20"
+                  }`}
+                  onClick={() => carouselApi?.scrollTo(index)}
+                  aria-label={`Go to slide ${index + 1}`}
+                />
+              ))}
+            </div>
+          )}
+          {centered && (
+            <div className="mt-4 flex justify-center gap-2">
+              <Button
+                size="icon"
+                variant="ghost"
+                onClick={() => {
+                  carouselApi?.scrollPrev();
+                }}
+                disabled={!canScrollPrev}
+                className="disabled:pointer-events-auto"
+              >
+                <ArrowLeft className="size-5" />
+              </Button>
+              <Button
+                size="icon"
+                variant="ghost"
+                onClick={() => {
+                  carouselApi?.scrollNext();
+                }}
+                disabled={!canScrollNext}
+                className="disabled:pointer-events-auto"
+              >
+                <ArrowRight className="size-5" />
+              </Button>
+            </div>
+          )}
+        </div>
+      )}
     </section>
   );
 };
