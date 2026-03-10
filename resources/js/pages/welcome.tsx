@@ -188,12 +188,13 @@ export default function Welcome() {
 
                     <div className="container relative mx-auto px-6 max-w-[var(--_sizes---container--max-width)]">
                         {/* Header */}
-                        <div className="mb-10 flex flex-col items-center text-center">
+                        <div className="mb-15 flex flex-col items-center text-center">
                             <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-xs font-medium text-white backdrop-blur-md">
                                 <span className="text-[var(--color-tripvana-a0f751)]">+</span> Travel Packages
                             </div>
-                            <h2 className="mt-3 text-2xl font-bold text-white md:text-3xl" style={{ fontFamily: 'Unbounded, sans-serif' }}>
-                                See our most popular <span className="text-[var(--color-tripvana-a0f751)]">destinations</span>
+                            <h2 className="mt-3 text-3xl font-bold text-white md:text-5xl" style={{ fontFamily: 'Unbounded, sans-serif' }}>
+                                See our most popular <br />
+                                <span className="text-[var(--color-tripvana-a0f751)]">destinations</span>
                             </h2>
                         </div>
 
