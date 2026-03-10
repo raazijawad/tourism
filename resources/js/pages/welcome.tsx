@@ -10,6 +10,9 @@ import { AuroraBackground } from '@/components/ui/aurora-background';
 import { PackageCard } from '@/components/tripvana/PackageCard';
 import { ReviewCard } from '@/components/tripvana/ReviewCard';
 import { SectionHeading } from '@/components/tripvana/SectionHeading';
+import { GlowCard } from '@/components/ui/spotlight-card';
+import { Search, Package, CreditCard } from 'lucide-react';
+import { DestinationCard as DestinationCardNew } from '@/components/ui/destination-card';
 
 export default function Welcome() {
     return (
@@ -88,7 +91,7 @@ export default function Welcome() {
                 <section className="bg-white">
                     <div className="container relative mx-auto px-6 max-w-[var(--_sizes---container--max-width)]">
                         <Gallery4
-                            title="A new way to explore the world"
+                            title={<>A new way to <br/>explore the world</>}
                             description="Discover breathtaking destinations, immerse yourself in new cultures, and create unforgettable memories with our curated travel experiences."
                             centered
                             autoPlay
@@ -135,98 +138,131 @@ export default function Welcome() {
                 </section>
 
                 {/* ---------- BOOKING PROCESS ---------- */}
-                <section className="py-24 bg-[var(--color-tripvana-f8f8f8)]">
-                    <div className="container mx-auto px-6 max-w-[var(--_sizes---container--max-width)] text-center">
-                        <SectionHeading 
-                            subtitle="Booking Process" 
+                <section className="py-24 relative bg-cover bg-center bg-fixed" style={{ backgroundImage: "url('/beaach.jpg')" }}>
+                    <div className="absolute inset-0 bg-white/60"></div>
+                    <div className="container relative mx-auto px-6 max-w-[var(--_sizes---container--max-width)] text-center">
+                        <SectionHeading
+                            subtitle="Booking Process"
                             title={<>Easy steps to book your<br/>next journey</>}
-                            center 
+                            center
+                            titleFont="Unbounded, sans-serif"
                             className="mb-16"
                         />
                         
-                        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-left mt-16">
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
                             {[
-                                { num: '01', title: 'Browse Tours', desc: 'Find your perfect destination from our wide range of curated tours and packages.', icon: '🔍' },
-                                { num: '02', title: 'Select a Package', desc: 'Choose the package that fits your schedule, budget, and travel preferences.', icon: '📦' },
-                                { num: '03', title: 'Pay Securely', desc: 'Complete your booking with our secure payment system and get ready to travel.', icon: '💳' }
-                            ].map((step, i) => (
-                                <div key={i} className="relative p-8 rounded-3xl border border-[var(--color-tripvana-091733)]/10 hover:border-[var(--color-tripvana-a0f751)] transition-colors group">
-                                    <div className="w-16 h-16 bg-[var(--color-tripvana-f8f8f8)] rounded-full flex items-center justify-center text-3xl mb-6 group-hover:bg-[var(--color-tripvana-a0f751)] transition-colors">
-                                        {step.icon}
+                                { num: '01', title: 'Browse Tours', desc: 'Find your perfect destination from our wide range of curated tours and packages.', icon: Search },
+                                { num: '02', title: 'Select a Package', desc: 'Choose the package that fits your schedule, budget, and travel preferences.', icon: Package },
+                                { num: '03', title: 'Pay Securely', desc: 'Complete your booking with our secure payment system and get ready to travel.', icon: CreditCard }
+                            ].map((step, i) => {
+                                const IconComponent = step.icon;
+                                return (
+                                    <div key={i} className="relative group">
+                                        <GlowCard 
+                                            customSize
+                                            className="w-full h-full"
+                                        >
+                                            <div className="p-6 flex flex-col h-full">
+                                                <div className="w-12 h-12 bg-[var(--color-tripvana-f8f8f8)]/50 rounded-full flex items-center justify-center mb-4 group-hover:bg-[var(--color-tripvana-a0f751)] transition-colors">
+                                                    <IconComponent className="w-6 h-6 text-[var(--color-tripvana-091733)]" />
+                                                </div>
+                                                <div className="text-4xl font-bold text-[var(--color-tripvana-091733)]/5 absolute top-6 right-6 pointer-events-none transition-all transform group-hover:-translate-y-2" style={{ fontFamily: 'Inter Tight, sans-serif' }}>{step.num}</div>
+                                                <h3 className="text-xl font-bold text-[var(--color-tripvana-091733)] mb-2" style={{ fontFamily: 'Inter Tight, sans-serif' }}>{step.title}</h3>
+                                                <p className="text-sm text-[var(--color-tripvana-656e7f)] leading-relaxed" style={{ fontFamily: 'Inter Tight, sans-serif' }}>{step.desc}</p>
+                                            </div>
+                                        </GlowCard>
                                     </div>
-                                    <div className="text-5xl font-bold text-[var(--color-tripvana-091733)]/5 absolute top-8 right-8 pointer-events-none group-hover:block transition-all transform group-hover:-translate-y-2">{step.num}</div>
-                                    <h3 className="text-2xl font-bold text-[var(--color-tripvana-091733)] mb-3">{step.title}</h3>
-                                    <p className="text-[var(--color-tripvana-656e7f)] leading-relaxed">{step.desc}</p>
-                                </div>
-                            ))}
+                                );
+                            })}
                         </div>
                     </div>
                 </section>
 
                 {/* ---------- TRAVEL PACKAGES ---------- */}
-                <section className="py-24 bg-[var(--color-tripvana-f8f8f8)]">
-                    <div className="container mx-auto px-6 max-w-[var(--_sizes---container--max-width)]">
-                        <div className="flexflex-col items-center justify-between gap-6 md:flex-row mb-12">
-                            <SectionHeading 
-                                subtitle="Travel Packages" 
-                                title="See our most popular destinations" 
-                            />
-                            <div className="mt-6 md:mt-0">
-                                <Button variant="outline">View All Packages</Button>
+                <section className="relative overflow-hidden bg-[var(--color-tripvana-091733)] py-16">
+                    {/* Background Decorative Elements */}
+                    <div className="absolute inset-0 overflow-hidden">
+                        <div className="absolute -top-40 -right-40 h-[400px] w-[400px] rounded-full bg-[var(--color-tripvana-a0f751)]/5 blur-[120px]" />
+                        <div className="absolute -bottom-40 -left-40 h-[300px] w-[300px] rounded-full bg-[var(--color-tripvana-122242)] blur-[100px]" />
+                    </div>
+
+                    <div className="container relative mx-auto px-6 max-w-[var(--_sizes---container--max-width)]">
+                        {/* Header */}
+                        <div className="mb-10 flex flex-col items-center text-center">
+                            <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-xs font-medium text-white backdrop-blur-md">
+                                <span className="text-[var(--color-tripvana-a0f751)]">+</span> Travel Packages
                             </div>
+                            <h2 className="mt-3 text-2xl font-bold text-white md:text-3xl" style={{ fontFamily: 'Unbounded, sans-serif' }}>
+                                See our most popular <span className="text-[var(--color-tripvana-a0f751)]">destinations</span>
+                            </h2>
                         </div>
 
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                            <PackageCard 
-                                image="https://images.unsplash.com/photo-1516483638261-f4dbaf036963?q=80&w=800&auto=format&fit=crop"
-                                location="Italy"
+                        {/* Destination Grid */}
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                            {/* Featured Card - Large */}
+                            <DestinationCardNew
+                                image="https://images.unsplash.com/photo-1516483638261-f4dbaf036963?q=80&w=1200&auto=format&fit=crop"
+                                location="Cinque Terre"
+                                country="Italy"
                                 days={7}
                                 title="Cinque Terre Coastline and Villages Tour"
                                 price="$1,299"
                                 rating={4.9}
                                 reviews={128}
+                                featured
                             />
-                            <PackageCard 
+
+                            {/* Regular Cards */}
+                            <DestinationCardNew
                                 image="https://images.unsplash.com/photo-1548013146-72479768bada?q=80&w=800&auto=format&fit=crop"
-                                location="India"
+                                location="Jaipur"
+                                country="India"
                                 days={5}
                                 title="Taj Mahal and Golden Triangle Expedition"
                                 price="$899"
                                 rating={4.8}
                                 reviews={85}
                             />
-                            <PackageCard 
+
+                            <DestinationCardNew
                                 image="https://images.unsplash.com/photo-1512100356356-de1b84283e18?q=80&w=800&auto=format&fit=crop"
-                                location="Japan"
+                                location="Kyoto"
+                                country="Japan"
                                 days={10}
                                 title="Kyoto Temples and Tokyo City Adventure"
                                 price="$2,499"
                                 rating={5.0}
                                 reviews={241}
                             />
-                            <PackageCard 
+
+                            <DestinationCardNew
                                 image="https://images.unsplash.com/photo-1499856871958-5b9627545d1a?q=80&w=800&auto=format&fit=crop"
-                                location="France"
+                                location="Paris"
+                                country="France"
                                 days={6}
                                 title="Paris Romance and Louvre Museum"
                                 price="$1,599"
                                 rating={4.7}
                                 reviews={156}
                             />
-                            <PackageCard 
+
+                            <DestinationCardNew
                                 image="https://images.unsplash.com/photo-1534351590666-13e3e96b5017?q=80&w=800&auto=format&fit=crop"
-                                location="Netherlands"
+                                location="Amsterdam"
+                                country="Netherlands"
                                 days={4}
                                 title="Amsterdam Canals and Windmills"
                                 price="$799"
                                 rating={4.6}
                                 reviews={92}
                             />
-                            <PackageCard 
+
+                            <DestinationCardNew
                                 image="https://images.unsplash.com/photo-1507608616759-54f48f0af0ee?q=80&w=800&auto=format&fit=crop"
-                                location="Brazil"
+                                location="Rio de Janeiro"
+                                country="Brazil"
                                 days={8}
-                                title="Rio de Janeiro Carnival and Beaches"
+                                title="Rio Carnival and Beaches Experience"
                                 price="$1,899"
                                 rating={4.9}
                                 reviews={114}
