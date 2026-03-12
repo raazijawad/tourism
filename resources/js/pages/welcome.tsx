@@ -25,29 +25,49 @@ export default function Welcome() {
                 
                 {/* ---------- NAVBAR ---------- */}
                 <header className="absolute left-0 right-0 top-0 z-50 flex items-center justify-between px-8 py-6">
-                    <div className="flex items-center gap-2 text-2xl font-bold text-white">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                            <path d="M2 17L12 22L22 17" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                            <path d="M2 12L12 17L22 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                        </svg>
-                        Tripvana
+                    <div className="flex items-center gap-2.5 text-2xl font-bold text-white" style={{ fontFamily: 'Unbounded, sans-serif' }}>
+                        <div className="relative">
+                            <div className="absolute inset-0 bg-[var(--color-tripvana-a0f751)]/30 rounded-lg blur-md" />
+                            <div className="relative w-10 h-10 rounded-lg bg-gradient-to-br from-[var(--color-tripvana-a0f751)] to-[var(--color-tripvana-a0f751)]/70 flex items-center justify-center">
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-[var(--color-tripvana-091733)]">
+                                    <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                                    <path d="M2 17L12 22L22 17" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                                    <path d="M2 12L12 17L22 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <span className="tracking-tight">Tripvana</span>
                     </div>
-                    <nav className="hidden items-center gap-8 rounded-full bg-white/10 px-8 py-4 backdrop-blur-md md:flex border border-white/20 text-white font-medium absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2" style={{ fontFamily: 'Aspekta, sans-serif' }}>
-                        <a href="#" className="transition-colors hover:text-[var(--color-tripvana-a0f751)]">Home</a>
-                        <a href="#" className="transition-colors hover:text-[var(--color-tripvana-a0f751)]">About us</a>
-                        <a href="#" className="transition-colors hover:text-[var(--color-tripvana-a0f751)]">Packages</a>
-                        <a href="#" className="transition-colors hover:text-[var(--color-tripvana-a0f751)]">Blog</a>
-                        <a href="#" className="transition-colors hover:text-[var(--color-tripvana-a0f751)]">Contact</a>
+                    <nav className="hidden items-center gap-1 rounded-full bg-white/10 px-2 py-2 backdrop-blur-md md:flex border border-white/20 text-white" style={{ fontFamily: 'Cabinet Grotesk, sans-serif' }}>
+                        <a href="#" className="group relative px-5 py-2.5 text-sm font-medium tracking-wide transition-all duration-300 hover:text-[var(--color-tripvana-a0f751)]">
+                            Home
+                            <span className="absolute inset-x-4 bottom-1.5 h-px bg-[var(--color-tripvana-a0f751)] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
+                        </a>
+                        <a href="#" className="group relative px-5 py-2.5 text-sm font-medium tracking-wide transition-all duration-300 hover:text-[var(--color-tripvana-a0f751)]">
+                            About us
+                            <span className="absolute inset-x-4 bottom-1.5 h-px bg-[var(--color-tripvana-a0f751)] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
+                        </a>
+                        <a href="#" className="group relative px-5 py-2.5 text-sm font-medium tracking-wide transition-all duration-300 hover:text-[var(--color-tripvana-a0f751)]">
+                            Packages
+                            <span className="absolute inset-x-4 bottom-1.5 h-px bg-[var(--color-tripvana-a0f751)] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
+                        </a>
+                        <a href="#" className="group relative px-5 py-2.5 text-sm font-medium tracking-wide transition-all duration-300 hover:text-[var(--color-tripvana-a0f751)]">
+                            Blog
+                            <span className="absolute inset-x-4 bottom-1.5 h-px bg-[var(--color-tripvana-a0f751)] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
+                        </a>
+                        <a href="#" className="group relative px-5 py-2.5 text-sm font-medium tracking-wide transition-all duration-300 hover:text-[var(--color-tripvana-a0f751)]">
+                            Contact
+                            <span className="absolute inset-x-4 bottom-1.5 h-px bg-[var(--color-tripvana-a0f751)] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
+                        </a>
                     </nav>
                     <div className="flex items-center gap-4">
-                        <div className="hidden items-center gap-2 text-white/80 lg:flex">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                        <a href="tel:+1800123456" className="hidden items-center gap-2.5 text-white/70 hover:text-white transition-colors lg:flex" style={{ fontFamily: 'Cabinet Grotesk, sans-serif' }}>
+                            <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                                 <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
                             </svg>
-                            <span className="font-medium">+1 (800) 123 456</span>
-                        </div>
-                        <Button variant="primary" className="rounded-full">Book Now</Button>
+                            <span className="text-sm font-medium tracking-wide">+1 (800) 123 456</span>
+                        </a>
+                        <Button variant="primary" className="rounded-full text-sm font-semibold tracking-wide" style={{ fontFamily: 'Cabinet Grotesk, sans-serif' }}>Book Now</Button>
                     </div>
                 </header>
 
@@ -761,104 +781,343 @@ export default function Welcome() {
                     </div>
                 </section>
 
-                {/* ---------- FAQ ---------- */}
-                <section className="py-24 bg-[var(--color-tripvana-f8f8f8)]">
-                    <div className="container mx-auto px-6 max-w-[var(--_sizes---container--max-width)]">
-                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-                            <div>
-                                <SectionHeading 
-                                    subtitle="General Questions" 
-                                    title="Frequently asked questions" 
-                                />
-                                <p className="mt-6 mb-8 text-[var(--color-tripvana-656e7f)] leading-relaxed text-lg">
+                {/* ---------- FAQ - MINIMAL REFINED ---------- */}
+                <section className="relative overflow-hidden py-28 bg-white">
+                    {/* Background Details */}
+                    <div className="absolute inset-0">
+                        <div className="absolute top-1/4 left-0 w-[400px] h-[400px] bg-gradient-to-br from-[var(--color-tripvana-a0f751)]/6 to-transparent rounded-full blur-[100px]" />
+                        <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-gradient-to-tl from-[var(--color-tripvana-091733)]/4 to-transparent rounded-full blur-[120px]" />
+                        {/* Noise texture */}
+                        <div className="absolute inset-0 opacity-[0.25]" style={{
+                            backgroundImage: 'url("data:image/svg+xml,%3Csvg viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg"%3E%3Cfilter id="noise"%3E%3CfeTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="4" stitchTiles="stitch"/%3E%3C/filter%3E%3Crect width="100%25" height="100%25" filter="url(%23noise)"/%3E%3C/svg%3E")'
+                        }} />
+                    </div>
+
+                    <div className="container relative mx-auto px-6 max-w-[var(--_sizes---container--max-width)]">
+                        {/* Centered Header */}
+                        <div className="mb-20">
+                            <div className="flex flex-col items-center text-center">
+                                {/* Badge */}
+                                <div className="inline-flex items-center gap-2.5 rounded-full bg-[var(--color-tripvana-f8f8f8)] border border-[var(--color-tripvana-091733)]/10 px-5 py-2 text-xs font-bold tracking-[0.15em] text-[var(--color-tripvana-091733)] uppercase mb-7">
+                                    <svg className="w-3.5 h-3.5 text-[var(--color-tripvana-a0f751)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                    </svg>
+                                    General Questions
+                                </div>
+                                
+                                {/* Heading */}
+                                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[var(--color-tripvana-091733)] leading-[1.15] tracking-tight mb-6" style={{ fontFamily: 'Unbounded, sans-serif' }}>
+                                    Frequently asked<br />
+                                    <span className="text-[var(--color-tripvana-a0f751)]">questions</span>
+                                </h2>
+                                
+                                {/* Description */}
+                                <p className="text-[var(--color-tripvana-656e7f)] text-sm max-w-lg leading-relaxed">
                                     Find answers to the most common questions about booking, payments, and our travel services.
                                 </p>
-                                <img 
-                                    src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=800&auto=format&fit=crop" 
-                                    alt="Customer Support" 
-                                    className="rounded-3xl w-full h-[300px] object-cover"
-                                />
                             </div>
-                            
-                            <div>
-                                <Accordion items={[
-                                    { question: "How do I book a tour package?", answer: "Booking is easy! Simply browse our packages, select your desired dates, and click 'Book Now'. Follow the secure payment prompts to confirm your reservation." },
-                                    { question: "Are flights included in the package?", answer: "Most of our standard packages cover land arrangements only. However, we do offer comprehensive packages that include flights. Please check the specific package details." },
-                                    { question: "What is your cancellation policy?", answer: "Cancellations made 30 days prior to departure qualify for a full refund. Cancellations between 15-29 days receive a 50% refund. Please read our full terms." },
-                                    { question: "Do you offer custom itineraries?", answer: "Yes, we specialize in tailor-made journeys. Contact our travel experts with your requirements and we'll craft a personalized itinerary just for you." },
-                                    { question: "Is travel insurance required?", answer: "While not strictly required, we highly recommend purchasing comprehensive travel insurance to cover unexpected cancellations, medical emergencies, or lost baggage during your trip." }
-                                ]} />
+                        </div>
+
+                        {/* FAQ Grid - 2 Columns */}
+                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
+                            {/* FAQ Column 1 */}
+                            <div className="space-y-4">
+                                {/* Question 1 */}
+                                <div className="group rounded-2xl bg-[var(--color-tripvana-f8f8f8)] p-6 transition-all duration-500 hover:bg-white hover:shadow-[0_8px_32px_rgba(0,0,0,0.06)]">
+                                    <div className="flex items-start gap-4">
+                                        <div className="flex-shrink-0 w-10 h-10 rounded-full bg-[var(--color-tripvana-091733)] flex items-center justify-center">
+                                            <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                            </svg>
+                                        </div>
+                                        <div className="flex-1">
+                                            <h3 className="text-[var(--color-tripvana-091733)] font-bold text-sm mb-2 leading-snug" style={{ fontFamily: 'Unbounded, sans-serif' }}>
+                                                How do I book a tour package?
+                                            </h3>
+                                            <p className="text-[var(--color-tripvana-656e7f)] text-xs leading-relaxed">
+                                                Booking is easy! Simply browse our packages, select your desired dates, and click 'Book Now'. Follow the secure payment prompts to confirm your reservation.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {/* Question 2 */}
+                                <div className="group rounded-2xl bg-[var(--color-tripvana-f8f8f8)] p-6 transition-all duration-500 hover:bg-white hover:shadow-[0_8px_32px_rgba(0,0,0,0.06)]">
+                                    <div className="flex items-start gap-4">
+                                        <div className="flex-shrink-0 w-10 h-10 rounded-full bg-[var(--color-tripvana-091733)] flex items-center justify-center">
+                                            <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
+                                            </svg>
+                                        </div>
+                                        <div className="flex-1">
+                                            <h3 className="text-[var(--color-tripvana-091733)] font-bold text-sm mb-2 leading-snug" style={{ fontFamily: 'Unbounded, sans-serif' }}>
+                                                Are flights included in the package?
+                                            </h3>
+                                            <p className="text-[var(--color-tripvana-656e7f)] text-xs leading-relaxed">
+                                                Most of our standard packages cover land arrangements only. However, we do offer comprehensive packages that include flights. Please check the specific package details.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {/* Question 3 */}
+                                <div className="group rounded-2xl bg-[var(--color-tripvana-f8f8f8)] p-6 transition-all duration-500 hover:bg-white hover:shadow-[0_8px_32px_rgba(0,0,0,0.06)]">
+                                    <div className="flex items-start gap-4">
+                                        <div className="flex-shrink-0 w-10 h-10 rounded-full bg-[var(--color-tripvana-a0f751)] flex items-center justify-center">
+                                            <svg className="w-5 h-5 text-[var(--color-tripvana-091733)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                            </svg>
+                                        </div>
+                                        <div className="flex-1">
+                                            <h3 className="text-[var(--color-tripvana-091733)] font-bold text-sm mb-2 leading-snug" style={{ fontFamily: 'Unbounded, sans-serif' }}>
+                                                What is your cancellation policy?
+                                            </h3>
+                                            <p className="text-[var(--color-tripvana-656e7f)] text-xs leading-relaxed">
+                                                Cancellations made 30 days prior to departure qualify for a full refund. Cancellations between 15-29 days receive a 50% refund. Please read our full terms.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* FAQ Column 2 */}
+                            <div className="space-y-4">
+                                {/* Question 4 */}
+                                <div className="group rounded-2xl bg-[var(--color-tripvana-f8f8f8)] p-6 transition-all duration-500 hover:bg-white hover:shadow-[0_8px_32px_rgba(0,0,0,0.06)]">
+                                    <div className="flex items-start gap-4">
+                                        <div className="flex-shrink-0 w-10 h-10 rounded-full bg-[var(--color-tripvana-a0f751)] flex items-center justify-center">
+                                            <svg className="w-5 h-5 text-[var(--color-tripvana-091733)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                                            </svg>
+                                        </div>
+                                        <div className="flex-1">
+                                            <h3 className="text-[var(--color-tripvana-091733)] font-bold text-sm mb-2 leading-snug" style={{ fontFamily: 'Unbounded, sans-serif' }}>
+                                                Do you offer custom itineraries?
+                                            </h3>
+                                            <p className="text-[var(--color-tripvana-656e7f)] text-xs leading-relaxed">
+                                                Yes, we specialize in tailor-made journeys. Contact our travel experts with your requirements and we'll craft a personalized itinerary just for you.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {/* Question 5 */}
+                                <div className="group rounded-2xl bg-[var(--color-tripvana-f8f8f8)] p-6 transition-all duration-500 hover:bg-white hover:shadow-[0_8px_32px_rgba(0,0,0,0.06)]">
+                                    <div className="flex items-start gap-4">
+                                        <div className="flex-shrink-0 w-10 h-10 rounded-full bg-[var(--color-tripvana-091733)] flex items-center justify-center">
+                                            <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                                            </svg>
+                                        </div>
+                                        <div className="flex-1">
+                                            <h3 className="text-[var(--color-tripvana-091733)] font-bold text-sm mb-2 leading-snug" style={{ fontFamily: 'Unbounded, sans-serif' }}>
+                                                Is travel insurance required?
+                                            </h3>
+                                            <p className="text-[var(--color-tripvana-656e7f)] text-xs leading-relaxed">
+                                                While not strictly required, we highly recommend purchasing comprehensive travel insurance to cover unexpected cancellations, medical emergencies, or lost baggage during your trip.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {/* Contact CTA Card */}
+                                <div className="relative rounded-2xl bg-[var(--color-tripvana-091733)] p-6 overflow-hidden group">
+                                    {/* Background accent */}
+                                    <div className="absolute inset-0 bg-gradient-to-br from-[var(--color-tripvana-a0f751)]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                                    
+                                    <div className="relative z-10 flex flex-col h-full justify-center">
+                                        <div className="w-10 h-10 rounded-full bg-[var(--color-tripvana-a0f751)]/20 flex items-center justify-center mb-4">
+                                            <svg className="w-5 h-5 text-[var(--color-tripvana-a0f751)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                                            </svg>
+                                        </div>
+                                        <h3 className="text-white font-bold text-sm mb-2 leading-snug" style={{ fontFamily: 'Unbounded, sans-serif' }}>
+                                            Still have questions?
+                                        </h3>
+                                        <p className="text-white/60 text-xs leading-relaxed mb-4">
+                                            Our team is here to help you plan your perfect journey.
+                                        </p>
+                                        <a href="#" className="inline-flex items-center gap-2 text-[var(--color-tripvana-a0f751)] font-bold text-xs uppercase tracking-wider hover:text-white transition-colors" style={{ fontFamily: 'Unbounded, sans-serif' }}>
+                                            <span>Contact Us</span>
+                                            <svg className="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </section>
 
-                {/* ---------- FOOTER ---------- */}
-                <footer className="bg-[var(--color-tripvana-091733)] text-white pt-24 pb-12">
-                    <div className="container mx-auto px-6 max-w-[var(--_sizes---container--max-width)]">
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 mb-16 border-b border-white/10 pb-16">
-                            
-                            <div className="lg:col-span-4">
-                                <div className="flex items-center gap-2 text-2xl font-bold mb-6">
-                                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                                        <path d="M2 17L12 22L22 17" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                                        <path d="M2 12L12 17L22 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                                    </svg>
-                                    Tripvana
+                {/* ---------- FOOTER - LUXURY EDITORIAL ---------- */}
+                <footer className="relative bg-[var(--color-tripvana-091733)] text-white overflow-hidden">
+                    {/* Background Details */}
+                    <div className="absolute inset-0">
+                        {/* Gradient overlay */}
+                        <div className="absolute inset-0 bg-gradient-to-b from-[var(--color-tripvana-091733)] via-[var(--color-tripvana-091733)] to-[var(--color-tripvana-0f1f47)]" />
+                        {/* Large gradient orb */}
+                        <div className="absolute -top-40 -right-40 w-[600px] h-[600px] rounded-full bg-gradient-to-br from-[var(--color-tripvana-a0f751)]/15 to-transparent blur-[140px]" />
+                        <div className="absolute bottom-0 left-1/4 w-[500px] h-[500px] rounded-full bg-gradient-to-tr from-[var(--color-tripvana-a0f751)]/8 to-transparent blur-[120px]" />
+                        {/* Subtle grid pattern */}
+                        <div className="absolute inset-0 opacity-[0.02]" style={{
+                            backgroundImage: 'repeating-linear-gradient(0deg, transparent, transparent 40px, #ffffff 40px, #ffffff 41px), repeating-linear-gradient(90deg, transparent, transparent 40px, #ffffff 40px, #ffffff 41px)'
+                        }} />
+                        {/* Noise texture */}
+                        <div className="absolute inset-0 opacity-[0.2]" style={{
+                            backgroundImage: 'url("data:image/svg+xml,%3Csvg viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg"%3E%3Cfilter id="noise"%3E%3CfeTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="4" stitchTiles="stitch"/%3E%3C/filter%3E%3Crect width="100%25" height="100%25" filter="url(%23noise)"/%3E%3C/svg%3E")'
+                        }} />
+                    </div>
+
+                    <div className="container relative mx-auto px-6 max-w-[var(--_sizes---container--max-width)]">
+                        {/* Main Footer Content */}
+                        <div className="pt-20 pb-16">
+                            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
+                                {/* Brand Column - Spans 4 cols */}
+                                <div className="lg:col-span-4">
+                                    {/* Logo */}
+                                    <div className="flex items-center gap-3 mb-8">
+                                        <div className="relative">
+                                            <div className="absolute inset-0 bg-[var(--color-tripvana-a0f751)]/30 rounded-xl blur-lg" />
+                                            <div className="relative w-12 h-12 rounded-xl bg-gradient-to-br from-[var(--color-tripvana-a0f751)] to-[var(--color-tripvana-a0f751)]/70 flex items-center justify-center">
+                                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-[var(--color-tripvana-091733)]">
+                                                    <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                                                    <path d="M2 17L12 22L22 17" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                                                    <path d="M2 12L12 17L22 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                                                </svg>
+                                            </div>
+                                        </div>
+                                        <span className="text-2xl font-bold tracking-tight" style={{ fontFamily: 'Unbounded, sans-serif' }}>Tripvana</span>
+                                    </div>
+                                    
+                                    {/* Description */}
+                                    <p className="text-[var(--color-tripvana-9ea7b8)] leading-relaxed mb-8 pr-4">
+                                        We are dedicated to providing the ultimate travel experience. Our expert guides and carefully curated itineraries ensure every journey is memorable.
+                                    </p>
+                                    
+                                    {/* Social Links */}
+                                    <div className="flex items-center gap-3">
+                                        <a href="#" className="group w-11 h-11 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-[var(--color-tripvana-a0f751)] hover:border-[var(--color-tripvana-a0f751)] hover:text-[var(--color-tripvana-091733)] transition-all duration-300">
+                                            <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/></svg>
+                                        </a>
+                                        <a href="#" className="group w-11 h-11 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-[var(--color-tripvana-a0f751)] hover:border-[var(--color-tripvana-a0f751)] hover:text-[var(--color-tripvana-091733)] transition-all duration-300">
+                                            <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                                        </a>
+                                        <a href="#" className="group w-11 h-11 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-[var(--color-tripvana-a0f751)] hover:border-[var(--color-tripvana-a0f751)] hover:text-[var(--color-tripvana-091733)] transition-all duration-300">
+                                            <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/></svg>
+                                        </a>
+                                        <a href="#" className="group w-11 h-11 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-[var(--color-tripvana-a0f751)] hover:border-[var(--color-tripvana-a0f751)] hover:text-[var(--color-tripvana-091733)] transition-all duration-300">
+                                            <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/></svg>
+                                        </a>
+                                    </div>
                                 </div>
-                                <p className="text-[var(--color-tripvana-9ea7b8)] leading-relaxed pr-8">
-                                    We are dedicated to providing the ultimate travel experience. Our expert guides and carefully curated itineraries ensure every journey is memorable.
-                                </p>
-                            </div>
 
-                            <div className="lg:col-span-2">
-                                <h4 className="text-xl font-bold mb-6">Company</h4>
-                                <ul className="flex flex-col gap-4 text-[var(--color-tripvana-9ea7b8)]">
-                                    <li><a href="#" className="hover:text-[var(--color-tripvana-a0f751)] transition-colors">About Us</a></li>
-                                    <li><a href="#" className="hover:text-[var(--color-tripvana-a0f751)] transition-colors">Careers</a></li>
-                                    <li><a href="#" className="hover:text-[var(--color-tripvana-a0f751)] transition-colors">Travel Blog</a></li>
-                                    <li><a href="#" className="hover:text-[var(--color-tripvana-a0f751)] transition-colors">Contact Us</a></li>
-                                </ul>
-                            </div>
+                                {/* Links Columns */}
+                                <div className="lg:col-span-2">
+                                    <h4 className="text-sm font-bold text-white uppercase tracking-[0.15em] mb-6" style={{ fontFamily: 'Unbounded, sans-serif' }}>Company</h4>
+                                    <ul className="flex flex-col gap-3">
+                                        <li><a href="#" className="text-[var(--color-tripvana-9ea7b8)] text-sm hover:text-[var(--color-tripvana-a0f751)] transition-colors inline-block hover:translate-x-1 duration-200">About Us</a></li>
+                                        <li><a href="#" className="text-[var(--color-tripvana-9ea7b8)] text-sm hover:text-[var(--color-tripvana-a0f751)] transition-colors inline-block hover:translate-x-1 duration-200">Careers</a></li>
+                                        <li><a href="#" className="text-[var(--color-tripvana-9ea7b8)] text-sm hover:text-[var(--color-tripvana-a0f751)] transition-colors inline-block hover:translate-x-1 duration-200">Travel Blog</a></li>
+                                        <li><a href="#" className="text-[var(--color-tripvana-9ea7b8)] text-sm hover:text-[var(--color-tripvana-a0f751)] transition-colors inline-block hover:translate-x-1 duration-200">Contact Us</a></li>
+                                        <li><a href="#" className="text-[var(--color-tripvana-9ea7b8)] text-sm hover:text-[var(--color-tripvana-a0f751)] transition-colors inline-block hover:translate-x-1 duration-200">Press</a></li>
+                                    </ul>
+                                </div>
 
-                            <div className="lg:col-span-2">
-                                <h4 className="text-xl font-bold mb-6">Destinations</h4>
-                                <ul className="flex flex-col gap-4 text-[var(--color-tripvana-9ea7b8)]">
-                                    <li><a href="#" className="hover:text-[var(--color-tripvana-a0f751)] transition-colors">Europe</a></li>
-                                    <li><a href="#" className="hover:text-[var(--color-tripvana-a0f751)] transition-colors">Asia</a></li>
-                                    <li><a href="#" className="hover:text-[var(--color-tripvana-a0f751)] transition-colors">Americas</a></li>
-                                    <li><a href="#" className="hover:text-[var(--color-tripvana-a0f751)] transition-colors">Africa</a></li>
-                                </ul>
-                            </div>
+                                <div className="lg:col-span-2">
+                                    <h4 className="text-sm font-bold text-white uppercase tracking-[0.15em] mb-6" style={{ fontFamily: 'Unbounded, sans-serif' }}>Destinations</h4>
+                                    <ul className="flex flex-col gap-3">
+                                        <li><a href="#" className="text-[var(--color-tripvana-9ea7b8)] text-sm hover:text-[var(--color-tripvana-a0f751)] transition-colors inline-block hover:translate-x-1 duration-200">Europe</a></li>
+                                        <li><a href="#" className="text-[var(--color-tripvana-9ea7b8)] text-sm hover:text-[var(--color-tripvana-a0f751)] transition-colors inline-block hover:translate-x-1 duration-200">Asia</a></li>
+                                        <li><a href="#" className="text-[var(--color-tripvana-9ea7b8)] text-sm hover:text-[var(--color-tripvana-a0f751)] transition-colors inline-block hover:translate-x-1 duration-200">Americas</a></li>
+                                        <li><a href="#" className="text-[var(--color-tripvana-9ea7b8)] text-sm hover:text-[var(--color-tripvana-a0f751)] transition-colors inline-block hover:translate-x-1 duration-200">Africa</a></li>
+                                        <li><a href="#" className="text-[var(--color-tripvana-9ea7b8)] text-sm hover:text-[var(--color-tripvana-a0f751)] transition-colors inline-block hover:translate-x-1 duration-200">Oceania</a></li>
+                                    </ul>
+                                </div>
 
-                            <div className="lg:col-span-4">
-                                <h4 className="text-xl font-bold mb-6">Newsletter</h4>
-                                <p className="text-[var(--color-tripvana-9ea7b8)] leading-relaxed mb-6">
-                                    Subscribe to our newsletter for travel tips, exclusive deals, and inspiration.
-                                </p>
-                                <div className="flex bg-white/5 rounded-full p-2 border border-white/10 focus-within:border-[var(--color-tripvana-a0f751)] transition-colors">
-                                    <input 
-                                        type="email" 
-                                        placeholder="Your email address" 
-                                        className="bg-transparent border-none outline-none px-4 text-white flex-1 w-full"
-                                    />
-                                    <Button variant="primary" className="h-12 w-12 !px-0 rounded-full flex shrink-0 items-center justify-center">
-                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                                            <line x1="22" y1="2" x2="11" y2="13"></line>
-                                            <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
-                                        </svg>
-                                    </Button>
+                                <div className="lg:col-span-2">
+                                    <h4 className="text-sm font-bold text-white uppercase tracking-[0.15em] mb-6" style={{ fontFamily: 'Unbounded, sans-serif' }}>Support</h4>
+                                    <ul className="flex flex-col gap-3">
+                                        <li><a href="#" className="text-[var(--color-tripvana-9ea7b8)] text-sm hover:text-[var(--color-tripvana-a0f751)] transition-colors inline-block hover:translate-x-1 duration-200">Help Center</a></li>
+                                        <li><a href="#" className="text-[var(--color-tripvana-9ea7b8)] text-sm hover:text-[var(--color-tripvana-a0f751)] transition-colors inline-block hover:translate-x-1 duration-200">FAQs</a></li>
+                                        <li><a href="#" className="text-[var(--color-tripvana-9ea7b8)] text-sm hover:text-[var(--color-tripvana-a0f751)] transition-colors inline-block hover:translate-x-1 duration-200">Terms of Service</a></li>
+                                        <li><a href="#" className="text-[var(--color-tripvana-9ea7b8)] text-sm hover:text-[var(--color-tripvana-a0f751)] transition-colors inline-block hover:translate-x-1 duration-200">Privacy Policy</a></li>
+                                        <li><a href="#" className="text-[var(--color-tripvana-9ea7b8)] text-sm hover:text-[var(--color-tripvana-a0f751)] transition-colors inline-block hover:translate-x-1 duration-200">Sitemap</a></li>
+                                    </ul>
+                                </div>
+
+                                {/* Newsletter Column */}
+                                <div className="lg:col-span-2">
+                                    <h4 className="text-sm font-bold text-white uppercase tracking-[0.15em] mb-6" style={{ fontFamily: 'Unbounded, sans-serif' }}>Newsletter</h4>
+                                    <p className="text-[var(--color-tripvana-9ea7b8)] text-sm leading-relaxed mb-5">
+                                        Subscribe for travel tips, exclusive deals, and inspiration.
+                                    </p>
+                                    <form className="flex flex-col gap-3">
+                                        <div className="relative">
+                                            <input
+                                                type="email"
+                                                placeholder="Your email address"
+                                                className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3.5 text-sm text-white placeholder:text-white/30 focus:outline-none focus:border-[var(--color-tripvana-a0f751)] focus:bg-white/10 transition-all duration-300 pr-12"
+                                            />
+                                            <button
+                                                type="submit"
+                                                className="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-lg bg-[var(--color-tripvana-a0f751)] text-[var(--color-tripvana-091733)] flex items-center justify-center hover:bg-white transition-colors duration-300"
+                                            >
+                                                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </form>
+                                    
+                                    {/* Contact Info */}
+                                    <div className="mt-6 space-y-2">
+                                        <a href="tel:+1800123456" className="flex items-center gap-2 text-[var(--color-tripvana-9ea7b8)] text-xs hover:text-[var(--color-tripvana-a0f751)] transition-colors">
+                                            <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                                            </svg>
+                                            +1 (800) 123 456
+                                        </a>
+                                        <a href="mailto:hello@tripvana.com" className="flex items-center gap-2 text-[var(--color-tripvana-9ea7b8)] text-xs hover:text-[var(--color-tripvana-a0f751)] transition-colors">
+                                            <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                                            </svg>
+                                            hello@tripvana.com
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
-
                         </div>
-                        
-                        <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-[var(--color-tripvana-9ea7b8)] text-sm">
-                            <p>© 2024 Tripvana. All rights reserved.</p>
-                            <div className="flex gap-6">
-                                <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
-                                <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
+
+                        {/* Bottom Bar */}
+                        <div className="border-t border-white/10 pt-8 pb-8">
+                            <div className="flex flex-col lg:flex-row items-center justify-between gap-6">
+                                {/* Copyright */}
+                                <p className="text-[var(--color-tripvana-9ea7b8)] text-xs">
+                                    © 2024 Tripvana. All rights reserved.
+                                </p>
+                                
+                                {/* Legal Links */}
+                                <div className="flex items-center gap-6">
+                                    <a href="#" className="text-[var(--color-tripvana-9ea7b8)] text-xs hover:text-white transition-colors">Privacy Policy</a>
+                                    <span className="w-px h-3 bg-white/10" />
+                                    <a href="#" className="text-[var(--color-tripvana-9ea7b8)] text-xs hover:text-white transition-colors">Terms of Service</a>
+                                    <span className="w-px h-3 bg-white/10" />
+                                    <a href="#" className="text-[var(--color-tripvana-9ea7b8)] text-xs hover:text-white transition-colors">Cookie Policy</a>
+                                </div>
+                                
+                                {/* Payment Methods */}
+                                <div className="flex items-center gap-3">
+                                    <div className="w-10 h-6 rounded bg-white/10 flex items-center justify-center">
+                                        <svg className="w-6 h-4 text-white/60" viewBox="0 0 38 24" fill="currentColor"><path d="M35 0H3C1.3 0 0 1.3 0 3v18c0 1.7 1.4 3 3 3h32c1.7 0 3-1.3 3-3V3c0-1.7-1.4-3-3-3z" fill="#fff" fill-opacity=".05"/><path d="M9.5 12.8c.3-.7.8-1.3 1.4-1.8.6-.5 1.4-.8 2.3-.8.6 0 1.1.1 1.6.3.5.2.9.5 1.2.9.3-.4.7-.7 1.2-.9.5-.2 1-.3 1.6-.3.9 0 1.7.3 2.3.8.6.5 1.1 1.1 1.4 1.8.3.7.5 1.5.5 2.4 0 .9-.2 1.7-.5 2.4-.3.7-.8 1.3-1.4 1.8-.6.5-1.4.8-2.3.8-.6 0-1.1-.1-1.6-.3-.5-.2-.9-.5-1.2-.9-.3.4-.7.7-1.2.9-.5.2-1 .3-1.6.3-.9 0-1.7-.3-2.3-.8-.6-.5-1.1-1.1-1.4-1.8-.3-.7-.5-1.5-.5-2.4 0-.9.1-1.7.5-2.4z" fill="#fff" fill-opacity=".6"/></svg>
+                                    </div>
+                                    <div className="w-10 h-6 rounded bg-white/10 flex items-center justify-center">
+                                        <svg className="w-6 h-4 text-white/60" viewBox="0 0 38 24" fill="currentColor"><circle cx="12" cy="12" r="10" fill="#fff" fill-opacity=".3"/><circle cx="26" cy="12" r="10" fill="#fff" fill-opacity=".5"/></svg>
+                                    </div>
+                                    <div className="w-10 h-6 rounded bg-white/10 flex items-center justify-center">
+                                        <svg className="w-6 h-4 text-white/60" viewBox="0 0 38 24" fill="currentColor"><path d="M35 0H3C1.3 0 0 1.3 0 3v18c0 1.7 1.4 3 3 3h32c1.7 0 3-1.3 3-3V3c0-1.7-1.4-3-3-3z" fill="#fff" fill-opacity=".05"/><rect x="6" y="6" width="10" height="12" rx="1" fill="#fff" fill-opacity=".4"/><rect x="22" y="6" width="10" height="12" rx="1" fill="#fff" fill-opacity=".4"/></svg>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
