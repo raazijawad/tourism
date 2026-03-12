@@ -547,41 +547,216 @@ export default function Welcome() {
                     </div>
                 </section>
 
-                {/* ---------- BLOG & TIPS ---------- */}
-                <section className="py-24 bg-white">
-                    <div className="container mx-auto px-6 max-w-[var(--_sizes---container--max-width)]">
-                        <div className="flex flex-col items-center justify-between gap-6 md:flex-row mb-12">
-                            <SectionHeading 
-                                subtitle="Blog & Tips" 
-                                title="Latest travel insights" 
-                            />
-                            <div className="mt-6 md:mt-0">
-                                <Button variant="outline">View All Posts</Button>
+                {/* Decorative divider */}
+                            <div className="h-px bg-gradient-to-r from-[var(--color-tripvana-091733)]/70 via-[var(--color-tripvana-091733)]/40   to-transparent" />
+
+                {/* ---------- BLOG & TIPS - EDITORIAL MAGAZINE ---------- */}
+                <section className="relative overflow-hidden py-28 bg-[var(--color-tripvana-f8f8f8)]">
+                    {/* Background Details */}
+                    <div className="absolute inset-0">
+                        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-gradient-to-bl from-[var(--color-tripvana-a0f751)]/8 to-transparent rounded-full blur-[120px]" />
+                        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-gradient-to-tr from-[var(--color-tripvana-091733)]/5 to-transparent rounded-full blur-[100px]" />
+                        {/* Noise texture */}
+                        <div className="absolute inset-0 opacity-[0.3]" style={{
+                            backgroundImage: 'url("data:image/svg+xml,%3Csvg viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg"%3E%3Cfilter id="noise"%3E%3CfeTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="4" stitchTiles="stitch"/%3E%3C/filter%3E%3Crect width="100%25" height="100%25" filter="url(%23noise)"/%3E%3C/svg%3E")'
+                        }} />
+                    </div>
+
+                    <div className="container relative mx-auto px-6 max-w-[var(--_sizes---container--max-width)]">
+                        {/* Editorial Header */}
+                        <div className="mb-20">
+                            <div className="flex flex-col items-center text-center">
+                                {/* Badge */}
+                                <div className="inline-flex items-center gap-2.5 rounded-full bg-white border border-[var(--color-tripvana-091733)]/10 px-5 py-2 text-xs font-bold tracking-[0.15em] text-[var(--color-tripvana-091733)] uppercase mb-7 shadow-sm">
+                                    <span className="w-2 h-2 rounded-full bg-[var(--color-tripvana-a0f751)]" />
+                                    Blog & Tips
+                                </div>
+                                
+                                {/* Main Heading - 2 rows, centered, smaller */}
+                                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[var(--color-tripvana-091733)] leading-[1.15] tracking-tight mb-6" style={{ fontFamily: 'Unbounded, sans-serif' }}>
+                                    Latest travel<br />
+                                    <span className="text-[var(--color-tripvana-a0f751)]">insights</span>
+                                </h2>
+                                
+                                {/* Description */}
+                                <p className="text-[var(--color-tripvana-656e7f)] text-sm max-w-lg leading-relaxed mb-6">
+                                    Expert guides, packing tips, and destination inspiration for the modern traveler.
+                                </p>
+                                
+                                {/* View All Link */}
+                                <a
+                                    href="#"
+                                    className="group inline-flex items-center gap-3 text-[var(--color-tripvana-091733)] font-bold text-xs uppercase tracking-wider hover:text-[var(--color-tripvana-a0f751)] transition-colors"
+                                    style={{ fontFamily: 'Unbounded, sans-serif' }}
+                                >
+                                    <span>View All Posts</span>
+                                    <svg className="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                                    </svg>
+                                </a>
+                            </div>
+                            
+                            
+                        </div>
+
+                        {/* Blog Grid - Asymmetric Layout */}
+                        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
+                            {/* Featured Post - Large Card */}
+                            <div className="lg:col-span-7 group relative">
+                                <div className="relative h-[500px] lg:h-[580px] rounded-3xl overflow-hidden shadow-[0_8px_40px_rgba(0,0,0,0.08)]">
+                                    {/* Image */}
+                                    <div className="absolute inset-0">
+                                        <img
+                                            src="https://images.unsplash.com/photo-1488085061387-422e29b40080?q=80&w=1200&auto=format&fit=crop"
+                                            alt="Backpacking Europe"
+                                            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                                        />
+                                        {/* Gradient Overlay */}
+                                        <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-tripvana-091733)] via-[var(--color-tripvana-091733)]/40 to-transparent" />
+                                    </div>
+                                    
+                                    {/* Content */}
+                                    <div className="absolute inset-0 p-8 lg:p-10 flex flex-col justify-end">
+                                        <div className="transform transition-transform duration-500 group-hover:-translate-y-2">
+                                            {/* Tag */}
+                                            <div className="inline-flex items-center gap-2 bg-[var(--color-tripvana-a0f751)] px-4 py-1.5 rounded-full mb-5">
+                                                <span className="text-[10px] font-bold text-[var(--color-tripvana-091733)] uppercase tracking-wider" style={{ fontFamily: 'Unbounded, sans-serif' }}>Travel Tips</span>
+                                            </div>
+                                            
+                                            {/* Title */}
+                                            <h3 className="text-2xl lg:text-3xl font-bold text-white mb-3 leading-tight" style={{ fontFamily: 'Unbounded, sans-serif' }}>
+                                                10 Essential Items to Pack for a Backpacking Trip in Europe
+                                            </h3>
+                                            
+                                            {/* Excerpt */}
+                                            <p className="text-white/80 text-sm leading-relaxed mb-5 line-clamp-2">
+                                                Discover the ultimate packing list for your European adventure. Don't leave home without these essentials.
+                                            </p>
+                                            
+                                            {/* Meta */}
+                                            <div className="flex items-center gap-4 text-white/60 text-xs">
+                                                <span className="flex items-center gap-2">
+                                                    <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                                    </svg>
+                                                    March 15, 2024
+                                                </span>
+                                                <span className="w-1 h-1 rounded-full bg-white/40" />
+                                                <span className="flex items-center gap-2 group-hover:text-[var(--color-tripvana-a0f751)] transition-colors">
+                                                    Read Article
+                                                    <svg className="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                                                    </svg>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* Secondary Posts - Stacked */}
+                            <div className="lg:col-span-5 flex flex-col gap-6">
+                                {/* Post 2 */}
+                                <div className="group relative flex-1 rounded-2xl overflow-hidden bg-white shadow-[0_4px_24px_rgba(0,0,0,0.04)] hover:shadow-[0_12px_48px_rgba(0,0,0,0.1)] transition-all duration-500">
+                                    <div className="flex flex-col sm:flex-row h-full">
+                                        {/* Image */}
+                                        <div className="sm:w-48 h-48 sm:h-full flex-shrink-0 overflow-hidden">
+                                            <img
+                                                src="https://images.unsplash.com/photo-1539635278303-d4002c07eae3?q=80&w=600&auto=format&fit=crop"
+                                                alt="Bali Temple"
+                                                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                                            />
+                                        </div>
+                                        
+                                        {/* Content */}
+                                        <div className="flex-1 p-6 flex flex-col justify-center">
+                                            <div className="transform transition-transform duration-500 group-hover:-translate-y-1">
+                                                {/* Tag */}
+                                                <div className="inline-flex items-center gap-1.5 mb-3">
+                                                    <span className="text-[9px] font-bold text-[var(--color-tripvana-a0f751)] uppercase tracking-wider" style={{ fontFamily: 'Unbounded, sans-serif' }}>Destinations</span>
+                                                </div>
+                                                
+                                                {/* Title */}
+                                                <h3 className="text-lg font-bold text-[var(--color-tripvana-091733)] mb-2 leading-snug group-hover:text-[var(--color-tripvana-a0f751)] transition-colors" style={{ fontFamily: 'Unbounded, sans-serif' }}>
+                                                    Why Bali Should Be Your Next Spiritual Retreat Destination
+                                                </h3>
+                                                
+                                                {/* Excerpt */}
+                                                <p className="text-[var(--color-tripvana-656e7f)] text-xs leading-relaxed mb-4 line-clamp-2">
+                                                    Explore the serene temples, lush jungles, and spiritual practices of Bali.
+                                                </p>
+                                                
+                                                {/* Meta */}
+                                                <div className="flex items-center gap-3 text-[var(--color-tripvana-9ea7b8)] text-[10px]">
+                                                    <span className="flex items-center gap-1.5">
+                                                        <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                                        </svg>
+                                                        March 10, 2024
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {/* Post 3 */}
+                                <div className="group relative flex-1 rounded-2xl overflow-hidden bg-white shadow-[0_4px_24px_rgba(0,0,0,0.04)] hover:shadow-[0_12px_48px_rgba(0,0,0,0.1)] transition-all duration-500">
+                                    <div className="flex flex-col sm:flex-row h-full">
+                                        {/* Image */}
+                                        <div className="sm:w-48 h-48 sm:h-full flex-shrink-0 overflow-hidden">
+                                            <img
+                                                src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?q=80&w=600&auto=format&fit=crop"
+                                                alt="Tokyo Subway"
+                                                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                                            />
+                                        </div>
+                                        
+                                        {/* Content */}
+                                        <div className="flex-1 p-6 flex flex-col justify-center">
+                                            <div className="transform transition-transform duration-500 group-hover:-translate-y-1">
+                                                {/* Tag */}
+                                                <div className="inline-flex items-center gap-1.5 mb-3">
+                                                    <span className="text-[9px] font-bold text-[var(--color-tripvana-a0f751)] uppercase tracking-wider" style={{ fontFamily: 'Unbounded, sans-serif' }}>Guides</span>
+                                                </div>
+                                                
+                                                {/* Title */}
+                                                <h3 className="text-lg font-bold text-[var(--color-tripvana-091733)] mb-2 leading-snug group-hover:text-[var(--color-tripvana-a0f751)] transition-colors" style={{ fontFamily: 'Unbounded, sans-serif' }}>
+                                                    A Beginner's Guide to Navigating Tokyo's Subway System
+                                                </h3>
+                                                
+                                                {/* Excerpt */}
+                                                <p className="text-[var(--color-tripvana-656e7f)] text-xs leading-relaxed mb-4 line-clamp-2">
+                                                    Master the Tokyo subway like a local with our comprehensive guide.
+                                                </p>
+                                                
+                                                {/* Meta */}
+                                                <div className="flex items-center gap-3 text-[var(--color-tripvana-9ea7b8)] text-[10px]">
+                                                    <span className="flex items-center gap-1.5">
+                                                        <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                                        </svg>
+                                                        March 05, 2024
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
 
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                            <BlogCard 
-                                image="https://images.unsplash.com/photo-1488085061387-422e29b40080?q=80&w=800&auto=format&fit=crop"
-                                date="March 15, 2024"
-                                tag="Travel Tips"
-                                title="10 Essential Items to Pack for a Backpacking Trip in Europe"
-                                excerpt="Discover the ultimate packing list for your European adventure. Don't leave home without these essentials."
-                            />
-                            <BlogCard 
-                                image="https://images.unsplash.com/photo-1539635278303-d4002c07eae3?q=80&w=800&auto=format&fit=crop"
-                                date="March 10, 2024"
-                                tag="Destinations"
-                                title="Why Bali Should Be Your Next Spiritual Retreat Destination"
-                                excerpt="Explore the serene temples, lush jungles, and spiritual practices of Bali that will rejuvenate your soul."
-                            />
-                            <BlogCard 
-                                image="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?q=80&w=800&auto=format&fit=crop"
-                                date="March 05, 2024"
-                                tag="Guides"
-                                title="A Beginner's Guide to Navigating Tokyo's Subway System"
-                                excerpt="Master the Tokyo subway like a local with our comprehensive guide to tickets, maps, and etiquette."
-                            />
+                        {/* Decorative Elements */}
+                        <div className="mt-20 relative">
+                            <div className="h-px bg-gradient-to-r from-transparent via-[var(--color-tripvana-091733)]/10 to-transparent" />
+                            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-[var(--color-tripvana-f8f8f8)] px-6">
+                                <div className="flex items-center gap-3">
+                                    <svg className="w-5 h-5 text-[var(--color-tripvana-a0f751)]" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                                    </svg>
+                                    <span className="text-[10px] font-bold text-[var(--color-tripvana-091733)] uppercase tracking-[0.2em]" style={{ fontFamily: 'Unbounded, sans-serif' }}>More Stories Coming Soon</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </section>
