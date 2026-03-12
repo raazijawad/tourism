@@ -11,8 +11,9 @@ import { PackageCard } from '@/components/tripvana/PackageCard';
 import { ReviewCard } from '@/components/tripvana/ReviewCard';
 import { SectionHeading } from '@/components/tripvana/SectionHeading';
 import { GlowCard } from '@/components/ui/spotlight-card';
-import { Search, Package, CreditCard } from 'lucide-react';
+import { Search, Package, CreditCard, Star } from 'lucide-react';
 import { DestinationCard as DestinationCardNew } from '@/components/ui/destination-card';
+import { TestimonialCard } from '@/components/ui/testimonial-card';
 
 export default function Welcome() {
     return (
@@ -91,7 +92,7 @@ export default function Welcome() {
                 <section className="bg-white">
                     <div className="container relative mx-auto px-6 max-w-[var(--_sizes---container--max-width)]">
                         <Gallery4
-                            title={<>A new way to <br/>explore the world</>}
+                            title="A new way to explore the world"
                             description="Discover breathtaking destinations, immerse yourself in new cultures, and create unforgettable memories with our curated travel experiences."
                             centered
                             autoPlay
@@ -272,50 +273,274 @@ export default function Welcome() {
                     </div>
                 </section>
 
-                {/* ---------- TRAVELERS REVIEW ---------- */}
-                <section className="py-24 bg-[var(--color-tripvana-122242)] text-white">
-                    <div className="container mx-auto px-6 max-w-[var(--_sizes---container--max-width)]">
-                        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-                            <div className="lg:col-span-5">
-                                <SectionHeading 
-                                    subtitle="Travelers Review" 
-                                    title="What people say about us" 
-                                    subtitleColor="text-[var(--color-tripvana-a0f751)] border-[var(--color-tripvana-a0f751)]"
-                                    titleColor="text-white"
-                                />
-                                <p className="mt-6 mb-8 text-[var(--color-tripvana-9ea7b8)] leading-relaxed">
-                                    Don't just take our word for it. Read what our satisfied travelers have to say about their unforgettable experiences with Tripvana.
-                                </p>
-                                
-                                <div className="p-6 bg-white/5 rounded-2xl border border-white/10 backdrop-blur-sm max-w-xs">
-                                    <div className="flex items-center gap-3 mb-2">
-                                        <div className="bg-[#00b67a] text-white p-1 rounded">★</div>
-                                        <span className="font-bold text-xl">Trustpilot</span>
-                                    </div>
-                                    <div className="flex text-[#00b67a] text-xl mb-1">★★★★★</div>
-                                    <p className="text-sm">Based on 10,000+ reviews</p>
+                {/* ---------- TRAVELERS REVIEW - CENTERED LUXURY ---------- */}
+                <section className="relative overflow-hidden py-28">
+                    {/* Animated Background */}
+                    <div className="absolute inset-0 bg-gradient-to-b from-[var(--color-tripvana-f8f8f8)] via-white to-[var(--color-tripvana-f8f8f8)]">
+                        {/* Gradient orbs */}
+                        <div className="absolute top-0 left-1/2 -translate-x-1/2 h-[700px] w-[700px] rounded-full bg-gradient-to-br from-[var(--color-tripvana-a0f751)]/10 to-transparent blur-[120px]" />
+                        <div className="absolute bottom-0 left-1/4 h-[500px] w-[500px] rounded-full bg-gradient-to-tr from-[var(--color-tripvana-091733)]/5 to-transparent blur-[100px]" />
+                        <div className="absolute bottom-0 right-1/4 h-[500px] w-[500px] rounded-full bg-gradient-to-tl from-[var(--color-tripvana-a0f751)]/8 to-transparent blur-[100px]" />
+                        {/* Noise texture */}
+                        <div className="absolute inset-0 opacity-[0.35]" style={{
+                            backgroundImage: 'url("data:image/svg+xml,%3Csvg viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg"%3E%3Cfilter id="noise"%3E%3CfeTurbulence type="fractalNoise" baseFrequency="0.7" numOctaves="4" stitchTiles="stitch"/%3E%3C/filter%3E%3Crect width="100%25" height="100%25" filter="url(%23noise)"/%3E%3C/svg%3E")'
+                        }} />
+                        {/* Subtle grid pattern */}
+                        <div className="absolute inset-0 opacity-[0.02]" style={{
+                            backgroundImage: 'repeating-linear-gradient(0deg, transparent, transparent 50px, #000000 50px, #000000 51px), repeating-linear-gradient(90deg, transparent, transparent 50px, #000000 50px, #000000 51px)'
+                        }} />
+                    </div>
+
+                    <div className="container relative mx-auto px-6 max-w-[var(--_sizes---container--max-width)]">
+                        {/* Centered Editorial Header */}
+                        <div className="mb-24">
+                            <div className="flex flex-col items-center text-center">
+                                {/* Badge */}
+                                <div className="inline-flex items-center gap-3 rounded-full bg-[var(--color-tripvana-091733)] px-6 py-2.5 text-xs font-bold tracking-[0.2em] text-white uppercase mb-8 shadow-lg shadow-[var(--color-tripvana-091733)]/20" style={{ fontFamily: 'Unbounded, sans-serif' }}>
+                                    <span className="relative flex h-2.5 w-2.5">
+                                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[var(--color-tripvana-a0f751)] opacity-75"></span>
+                                        <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[var(--color-tripvana-a0f751)]"></span>
+                                    </span>
+                                    Travelers Review
                                 </div>
                                 
-                                <div className="flex gap-4 mt-8">
-                                    <Button variant="round" className="h-12 w-12 !border-white/20">←</Button>
-                                    <Button variant="round" className="h-12 w-12 !border-white/20 hover:!bg-[var(--color-tripvana-a0f751)] hover:!text-[var(--color-tripvana-091733)] hover:!border-[var(--color-tripvana-a0f751)]">→</Button>
+                                {/* Main Heading */}
+                                <h2 className="text-5xl lg:text-8xl font-bold text-[var(--color-tripvana-091733)] leading-[0.9] tracking-tight mb-6" style={{ fontFamily: 'Unbounded, sans-serif' }}>
+                                    What people<br />
+                                    <span className="relative inline-block">
+                                        <span className="relative z-10 text-[var(--color-tripvana-a0f751)]">say about us</span>
+                                        {/* Underline accent */}
+                                        <svg className="absolute -bottom-2 left-0 w-full h-3 text-[var(--color-tripvana-a0f751)]/30" viewBox="0 0 200 9" fill="currentColor">
+                                            <path d="M2.00025 6.00003C28.0003 3.00003 103.5 0.500031 198 6.50003" stroke="currentColor" strokeWidth="3" strokeLinecap="round"/>
+                                        </svg>
+                                    </span>
+                                </h2>
+                                
+                                {/* Description */}
+                                <p className="text-[var(--color-tripvana-656e7f)] text-lg leading-relaxed max-w-2xl mt-6">
+                                    Authentic stories from adventurers who trusted us with their most precious memories. Each journey, uniquely crafted.
+                                </p>
+                            </div>
+                        </div>
+
+                        {/* Featured Testimonial - Hero Card */}
+                        <div className="mb-20 relative">
+                            <div className="group relative overflow-hidden rounded-3xl bg-[var(--color-tripvana-091733)] p-8 lg:p-14">
+                                {/* Background Image with Parallax */}
+                                <div className="absolute inset-0 transition-transform duration-700 group-hover:scale-105">
+                                    <img
+                                        src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?q=80&w=1600&auto=format&fit=crop"
+                                        alt="Travel destination"
+                                        className="h-full w-full object-cover opacity-30"
+                                    />
+                                    {/* Gradient overlay */}
+                                    <div className="absolute inset-0 bg-gradient-to-r from-[var(--color-tripvana-091733)] via-[var(--color-tripvana-091733)]/80 to-transparent" />
+                                </div>
+                                
+                                {/* Content */}
+                                <div className="relative z-10 grid grid-cols-1 lg:grid-cols-3 gap-10 items-center">
+                                    {/* Quote Section */}
+                                    <div className="lg:col-span-2">
+                                        <div className="flex items-center gap-2 mb-7">
+                                            {[...Array(5)].map((_, i) => (
+                                                <Star key={i} className="h-5 w-5 text-[var(--color-tripvana-a0f751)] fill-[var(--color-tripvana-a0f751)]" />
+                                            ))}
+                                        </div>
+                                        <blockquote className="text-2xl lg:text-3xl text-white font-medium leading-snug" style={{ fontFamily: 'Unbounded, sans-serif' }}>
+                                            "Tripvana made our honeymoon absolutely perfect. The itinerary was flawless and every single detail was taken care of."
+                                        </blockquote>
+                                    </div>
+                                    
+                                    {/* Author Info */}
+                                    <div className="flex lg:flex-col items-center lg:items-start gap-5">
+                                        <div className="relative">
+                                            <div className="absolute inset-0 bg-[var(--color-tripvana-a0f751)]/40 rounded-full blur-xl" />
+                                            <img
+                                                src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=200&auto=format&fit=crop"
+                                                alt="Sarah Jenkins"
+                                                className="relative w-16 h-16 rounded-full object-cover border-2 border-[var(--color-tripvana-a0f751)]/50"
+                                            />
+                                        </div>
+                                        <div>
+                                            <div className="text-white font-bold text-lg" style={{ fontFamily: 'Unbounded, sans-serif' }}>Sarah Jenkins</div>
+                                            <div className="text-[var(--color-tripvana-a0f751)] text-sm">Honeymoon in Santorini</div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
+                        </div>
+
+                        {/* Testimonials Grid - Centered Layout */}
+                        <div className="mb-24 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                            {/* Card 1 */}
+                            <div className="group relative rounded-2xl bg-white p-7 shadow-[0_4px_24px_rgba(0,0,0,0.04)] hover:shadow-[0_12px_48px_rgba(0,0,0,0.1)] transition-all duration-500 hover:-translate-y-2">
+                                <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-[var(--color-tripvana-a0f751)]/10 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                                <div className="flex items-center gap-1.5 mb-5">
+                                    {[...Array(5)].map((_, i) => (
+                                        <Star key={i} className="h-4 w-4 text-[var(--color-tripvana-a0f751)] fill-[var(--color-tripvana-a0f751)]" />
+                                    ))}
+                                </div>
+                                <blockquote className="text-[var(--color-tripvana-656e7f)] text-sm leading-relaxed mb-7 line-clamp-3" style={{ fontFamily: 'Inter Tight, sans-serif' }}>
+                                    "The best travel agency I've ever used. Their local guides in Japan were incredibly knowledgeable and friendly."
+                                </blockquote>
+                                <div className="flex items-center gap-3">
+                                    <img
+                                        src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=200&auto=format&fit=crop"
+                                        alt="Michael Chen"
+                                        className="w-10 h-10 rounded-full object-cover"
+                                    />
+                                    <div>
+                                        <div className="text-[var(--color-tripvana-091733)] font-bold text-xs" style={{ fontFamily: 'Unbounded, sans-serif' }}>Michael Chen</div>
+                                        <div className="text-[var(--color-tripvana-9ea7b8)] text-[10px] uppercase tracking-wide">Photographer</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* Card 2 */}
+                            <div className="group relative rounded-2xl bg-white p-7 shadow-[0_4px_24px_rgba(0,0,0,0.04)] hover:shadow-[0_12px_48px_rgba(0,0,0,0.1)] transition-all duration-500 hover:-translate-y-2">
+                                <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-[var(--color-tripvana-a0f751)]/10 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                                <div className="flex items-center gap-1.5 mb-5">
+                                    {[...Array(5)].map((_, i) => (
+                                        <Star key={i} className="h-4 w-4 text-[var(--color-tripvana-a0f751)] fill-[var(--color-tripvana-a0f751)]" />
+                                    ))}
+                                </div>
+                                <blockquote className="text-[var(--color-tripvana-656e7f)] text-sm leading-relaxed mb-7 line-clamp-3" style={{ fontFamily: 'Inter Tight, sans-serif' }}>
+                                    "From booking to return, everything was seamless. The hotels were perfect and tours unforgettable."
+                                </blockquote>
+                                <div className="flex items-center gap-3">
+                                    <img
+                                        src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=200&auto=format&fit=crop"
+                                        alt="Emma Rodriguez"
+                                        className="w-10 h-10 rounded-full object-cover"
+                                    />
+                                    <div>
+                                        <div className="text-[var(--color-tripvana-091733)] font-bold text-xs" style={{ fontFamily: 'Unbounded, sans-serif' }}>Emma Rodriguez</div>
+                                        <div className="text-[var(--color-tripvana-9ea7b8)] text-[10px] uppercase tracking-wide">Adventure Seeker</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* Card 3 - Dark Highlight */}
+                            <div className="group relative rounded-2xl bg-[var(--color-tripvana-091733)] p-7 shadow-[0_8px_40px_rgba(9,23,51,0.3)] hover:shadow-[0_16px_64px_rgba(9,23,51,0.5)] transition-all duration-500 hover:-translate-y-2 overflow-hidden">
+                                <div className="absolute inset-0 bg-gradient-to-br from-[var(--color-tripvana-a0f751)]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                                <div className="relative z-10">
+                                    <div className="flex items-center gap-1.5 mb-5">
+                                        {[...Array(5)].map((_, i) => (
+                                            <Star key={i} className="h-4 w-4 text-[var(--color-tripvana-a0f751)] fill-[var(--color-tripvana-a0f751)]" />
+                                        ))}
+                                    </div>
+                                    <blockquote className="text-white text-sm leading-relaxed mb-7 line-clamp-3" style={{ fontFamily: 'Inter Tight, sans-serif' }}>
+                                        "I was skeptical about using a travel agency, but Tripvana exceeded all expectations. Will definitely book again!"
+                                    </blockquote>
+                                    <div className="flex items-center gap-3">
+                                        <img
+                                            src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=200&auto=format&fit=crop"
+                                            alt="David Thompson"
+                                            className="w-10 h-10 rounded-full object-cover border border-white/20"
+                                        />
+                                        <div>
+                                            <div className="text-white font-bold text-xs" style={{ fontFamily: 'Unbounded, sans-serif' }}>David Thompson</div>
+                                            <div className="text-white/60 text-[10px] uppercase tracking-wide">Business Traveler</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* Card 4 */}
+                            <div className="group relative rounded-2xl bg-white p-7 shadow-[0_4px_24px_rgba(0,0,0,0.04)] hover:shadow-[0_12px_48px_rgba(0,0,0,0.1)] transition-all duration-500 hover:-translate-y-2">
+                                <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-[var(--color-tripvana-a0f751)]/10 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                                <div className="flex items-center gap-1.5 mb-5">
+                                    {[...Array(5)].map((_, i) => (
+                                        <Star key={i} className="h-4 w-4 text-[var(--color-tripvana-a0f751)] fill-[var(--color-tripvana-a0f751)]" />
+                                    ))}
+                                </div>
+                                <blockquote className="text-[var(--color-tripvana-656e7f)] text-sm leading-relaxed mb-7 line-clamp-3" style={{ fontFamily: 'Inter Tight, sans-serif' }}>
+                                    "The personalized attention and local insights made our family trip to Italy truly special."
+                                </blockquote>
+                                <div className="flex items-center gap-3">
+                                    <img
+                                        src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=200&auto=format&fit=crop"
+                                        alt="Lisa Park"
+                                        className="w-10 h-10 rounded-full object-cover"
+                                    />
+                                    <div>
+                                        <div className="text-[var(--color-tripvana-091733)] font-bold text-xs" style={{ fontFamily: 'Unbounded, sans-serif' }}>Lisa Park</div>
+                                        <div className="text-[var(--color-tripvana-9ea7b8)] text-[10px] uppercase tracking-wide">Family Traveler</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* Card 5 */}
+                            <div className="group relative rounded-2xl bg-white p-7 shadow-[0_4px_24px_rgba(0,0,0,0.04)] hover:shadow-[0_12px_48px_rgba(0,0,0,0.1)] transition-all duration-500 hover:-translate-y-2">
+                                <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-[var(--color-tripvana-a0f751)]/10 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                                <div className="flex items-center gap-1.5 mb-5">
+                                    {[...Array(5)].map((_, i) => (
+                                        <Star key={i} className="h-4 w-4 text-[var(--color-tripvana-a0f751)] fill-[var(--color-tripvana-a0f751)]" />
+                                    ))}
+                                </div>
+                                <blockquote className="text-[var(--color-tripvana-656e7f)] text-sm leading-relaxed mb-7 line-clamp-3" style={{ fontFamily: 'Inter Tight, sans-serif' }}>
+                                    "Amazing experience from start to finish. The team went above and beyond to make our trip memorable."
+                                </blockquote>
+                                <div className="flex items-center gap-3">
+                                    <img
+                                        src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=200&auto=format&fit=crop"
+                                        alt="James Wilson"
+                                        className="w-10 h-10 rounded-full object-cover"
+                                    />
+                                    <div>
+                                        <div className="text-[var(--color-tripvana-091733)] font-bold text-xs" style={{ fontFamily: 'Unbounded, sans-serif' }}>James Wilson</div>
+                                        <div className="text-[var(--color-tripvana-9ea7b8)] text-[10px] uppercase tracking-wide">Couple Traveler</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* Card 6 - Trustpilot */}
+                            <div className="group relative rounded-2xl bg-gradient-to-br from-[#00aa6c] to-[#008f5a] p-7 shadow-[0_8px_40px_rgba(0,170,108,0.3)] hover:shadow-[0_16px_64px_rgba(0,170,108,0.5)] transition-all duration-500 hover:-translate-y-2 overflow-hidden">
+                                <div className="absolute inset-0 opacity-10" style={{
+                                    backgroundImage: 'repeating-linear-gradient(45deg, transparent, transparent 2px, #ffffff 2px, #ffffff 4px)'
+                                }} />
+                                <div className="relative z-10">
+                                    <div className="flex items-center gap-1.5 mb-5">
+                                        {[...Array(5)].map((_, i) => (
+                                            <Star key={i} className="h-4 w-4 text-white fill-white" />
+                                        ))}
+                                    </div>
+                                    <div className="text-white font-bold text-2xl mb-2" style={{ fontFamily: 'Unbounded, sans-serif' }}>Trustpilot</div>
+                                    <div className="text-white/80 text-xs mb-5">Verified Reviews</div>
+                                    <div className="flex items-center gap-2 text-white/90">
+                                        <div className="text-3xl font-bold" style={{ fontFamily: 'Unbounded, sans-serif' }}>4.9</div>
+                                        <div className="text-xs">Based on 10,000+ reviews</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Stats Section - Centered Bar */}
+                        <div className="relative rounded-2xl bg-white border border-[var(--color-tripvana-091733)]/10 p-10 lg:p-12 overflow-hidden">
+                            {/* Background accent */}
+                            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[400px] h-[400px] bg-gradient-to-b from-[var(--color-tripvana-a0f751)]/5 to-transparent rounded-full blur-[80px]" />
                             
-                            <div className="lg:col-span-7">
-                                <div className="grid gap-6 md:grid-cols-2 lg:gap-8">
-                                    <ReviewCard 
-                                        text="Tripvana made our honeymoon absolutely perfect. The itinerary was flawless and every detail was taken care of."
-                                        authorImage="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=200&auto=format&fit=crop"
-                                        authorName="Sarah Jenkins"
-                                        authorRole="Traveler"
-                                    />
-                                    <ReviewCard 
-                                        text="The best travel agency I've ever used. Their local guides in Japan were incredibly knowledgeable and friendly."
-                                        authorImage="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=200&auto=format&fit=crop"
-                                        authorName="Michael Chen"
-                                        authorRole="Photographer"
-                                    />
+                            <div className="relative z-10 grid grid-cols-2 md:grid-cols-4 gap-10 lg:gap-16">
+                                <div className="text-center">
+                                    <div className="flex items-center justify-center gap-2 mb-4">
+                                        {[...Array(5)].map((_, i) => (
+                                            <Star key={i} className="h-4 w-4 text-[var(--color-tripvana-a0f751)] fill-[var(--color-tripvana-a0f751)]" />
+                                        ))}
+                                    </div>
+                                    <div className="text-5xl font-bold text-[var(--color-tripvana-091733)] mb-3" style={{ fontFamily: 'Unbounded, sans-serif' }}>4.9/5</div>
+                                    <div className="text-[var(--color-tripvana-9ea7b8)] text-xs uppercase tracking-[0.15em]">Average Rating</div>
+                                </div>
+                                <div className="text-center md:border-l border-[var(--color-tripvana-091733)]/10">
+                                    <div className="text-5xl font-bold text-[var(--color-tripvana-091733)] mb-3" style={{ fontFamily: 'Unbounded, sans-serif' }}>15k+</div>
+                                    <div className="text-[var(--color-tripvana-9ea7b8)] text-xs uppercase tracking-[0.15em]">Happy Travelers</div>
+                                </div>
+                                <div className="text-center md:border-l border-[var(--color-tripvana-091733)]/10">
+                                    <div className="text-5xl font-bold text-[var(--color-tripvana-091733)] mb-3" style={{ fontFamily: 'Unbounded, sans-serif' }}>50+</div>
+                                    <div className="text-[var(--color-tripvana-9ea7b8)] text-xs uppercase tracking-[0.15em]">Destinations</div>
+                                </div>
+                                <div className="text-center md:border-l border-[var(--color-tripvana-091733)]/10">
+                                    <div className="text-5xl font-bold text-[var(--color-tripvana-091733)] mb-3" style={{ fontFamily: 'Unbounded, sans-serif' }}>12+</div>
+                                    <div className="text-[var(--color-tripvana-9ea7b8)] text-xs uppercase tracking-[0.15em]">Years Experience</div>
                                 </div>
                             </div>
                         </div>
